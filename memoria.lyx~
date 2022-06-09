@@ -695,7 +695,7 @@ Diagrama de clases
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -851,6 +851,7 @@ Usando el patrón Repository se ha agrupado todas las operaciones del CRUD
 
 \begin_layout Standard
 \begin_inset Float algorithm
+placement H
 wide false
 sideways false
 status open
@@ -903,8 +904,8 @@ y
 \emph on
 setter
 \emph default
-, he optado por hacerlos públicos para poder iterarlos con facilidad mediante
- un bucle foreach sin tener que implementar la interfaz Iterator.
+, se ha optado por hacerlos públicos para poder iterarlos con facilidad
+ mediante un bucle foreach sin tener que implementar la interfaz Iterator.
 \end_layout
 
 \begin_layout Itemize
@@ -1217,7 +1218,7 @@ extraer_todas() : array
 \end_layout
 
 \begin_layout Itemize
-listar() : array
+listar() : void
 \end_layout
 
 \begin_layout Itemize
@@ -1344,8 +1345,218 @@ get_usuario_from_plantacion(int $id_plantacion) : Usuario
 Servicios
 \end_layout
 
+\begin_layout Subsubsection
+EntregaService
+\end_layout
+
 \begin_layout Standard
-Para cada modelo se crea un servicio:
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename entregaService_constructor.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Constructor de EntregaService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Métodos públicos
+\end_layout
+
+\begin_layout Itemize
+listar() : array
+\end_layout
+
+\begin_layout Itemize
+borrar(int $id_entrega) : void
+\end_layout
+
+\begin_layout Itemize
+datos_entrega(int $id_entrega) : ?Entrega
+\end_layout
+
+\begin_layout Itemize
+datos_entregas_correo(string $correo) : array
+\end_layout
+
+\begin_layout Itemize
+alta(float $tara, float $bruto, float $neto, string $fecha, string $hora,
+ int $id_plantacion) : int
+\end_layout
+
+\begin_layout Itemize
+modificar(int $id_entrega, array $parametros) : void
+\end_layout
+
+\begin_layout Itemize
+get_ultima_entrega() : ?Entrega
+\end_layout
+
+\begin_layout Subsubsection
+PlantacionService
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename plantacionService_constructor.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Constructor de plantacionService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Métodos públicos
+\end_layout
+
+\begin_layout Itemize
+listar() : array
+\end_layout
+
+\begin_layout Itemize
+borrar(int $id_plantacion) : void
+\end_layout
+
+\begin_layout Itemize
+datos_plantaciones(string $correo) : array
+\end_layout
+
+\begin_layout Itemize
+datos_plantacion_id(int $id) : ?Plantacion
+\end_layout
+
+\begin_layout Itemize
+alta(string $variedad, string $anio, int $zona, int $id_usuario) : void
+\end_layout
+
+\begin_layout Itemize
+modificar(int $id_plantacion, array $parametros) : void
+\end_layout
+
+\begin_layout Subsubsection
+UsuarioService
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename usuarioService_constructor.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Constructor de usuarioService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Métodos públicos
+\end_layout
+
+\begin_layout Itemize
+login(string $correo, string $password) : ?Usuario
+\end_layout
+
+\begin_layout Itemize
+listar() : array
+\end_layout
+
+\begin_layout Itemize
+borrar(string $id_usuario) : void
+\end_layout
+
+\begin_layout Itemize
+datos_usuario(int $id_usuario) : ?Usuario
+\end_layout
+
+\begin_layout Itemize
+datos_usuario_correo($correo) : ?Usuario
+\end_layout
+
+\begin_layout Itemize
+alta(array $campos_validados, string $correo, string $password, int $rol)
+ : void
+\end_layout
+
+\begin_layout Itemize
+modificar(int $id_usuario, array $campos_validados) : void
 \end_layout
 
 \begin_layout Subsection
