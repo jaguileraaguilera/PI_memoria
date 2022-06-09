@@ -1445,7 +1445,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Constructor de plantacionService
+Constructor de PlantacionService
 \end_layout
 
 \end_inset
@@ -1513,7 +1513,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Constructor de usuarioService
+Constructor de UsuarioService
 \end_layout
 
 \end_inset
@@ -1572,12 +1572,12 @@ EntregaRepository
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename entregaService_constructor.png
+	filename entregaRepository_constructor.png
 	lyxscale 50
 	scale 50
 
@@ -1590,7 +1590,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Constructor de EntregaService
+Constructor de EntregaRepository
 \end_layout
 
 \end_inset
@@ -1608,7 +1608,40 @@ Métodos públicos
 \end_layout
 
 \begin_layout Itemize
-asdf
+extraer_registro() : ?Entrega
+\end_layout
+
+\begin_layout Itemize
+extraer_todos() : array
+\end_layout
+
+\begin_layout Itemize
+listar() : array
+\end_layout
+
+\begin_layout Itemize
+datos_entrega(int $id_entrega) : ?Entrega
+\end_layout
+
+\begin_layout Itemize
+datos_entregas_correo(string $correo) : array
+\end_layout
+
+\begin_layout Itemize
+borrar(int $id_entrega): void
+\end_layout
+
+\begin_layout Itemize
+modificar(int $id_entrega, array $parametros): void
+\end_layout
+
+\begin_layout Itemize
+alta(float $tara, float $bruto, float $neto, string $fecha, string $hora,
+ int $id_plantacion): int
+\end_layout
+
+\begin_layout Itemize
+get_ultima_entrega(): ?Entrega
 \end_layout
 
 \begin_layout Subsubsection
@@ -1656,7 +1689,35 @@ Métodos públicos
 \end_layout
 
 \begin_layout Itemize
-asdf
+extraer_registro() : ?Plantacion
+\end_layout
+
+\begin_layout Itemize
+extraer_todos() : array
+\end_layout
+
+\begin_layout Itemize
+listar() : array
+\end_layout
+
+\begin_layout Itemize
+borrar(int $id_plantacion) : void
+\end_layout
+
+\begin_layout Itemize
+datos_plantaciones(string $correo) : array
+\end_layout
+
+\begin_layout Itemize
+datos_plantacion_id(int $id) : ?Plantacion
+\end_layout
+
+\begin_layout Itemize
+modificar(int $id_plantacion, array $parametros) : void
+\end_layout
+
+\begin_layout Itemize
+alta(string $variedad, int $anio, int $zona, int $id_usuario) : void
 \end_layout
 
 \begin_layout Subsubsection
@@ -1704,7 +1765,44 @@ Métodos públicos
 \end_layout
 
 \begin_layout Itemize
-asdf
+extraer_registro() : ?Usuario
+\end_layout
+
+\begin_layout Itemize
+extraer_todos() : array
+\end_layout
+
+\begin_layout Itemize
+login(string $correo, string $password) : ?Usuario
+\end_layout
+
+\begin_layout Itemize
+listar() : array
+\end_layout
+
+\begin_layout Itemize
+borrar(int $id_usuario) : void
+\end_layout
+
+\begin_layout Itemize
+datos_usuario(int $id_usuario) : ?Usuario
+\end_layout
+
+\begin_layout Itemize
+datos_usuario_correo(string $correo) : ?Usuario
+\end_layout
+
+\begin_layout Itemize
+alta(array $campos_validados, string $correo, string $password, int $rol)
+ : void
+\end_layout
+
+\begin_layout Itemize
+modificar(int $id_usuario, array $parametros) : void
+\end_layout
+
+\begin_layout Itemize
+get_usuario_from_plantacion(int $id_plantacion) : ?Usuario
 \end_layout
 
 \begin_layout Section
