@@ -4897,7 +4897,7 @@ Socios
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -4929,24 +4929,321 @@ Página de mis entregas
 Ver mis datos personales
 \end_layout
 
+\begin_layout Standard
+Desde la página de 
+\begin_inset Quotes fld
+\end_inset
+
+Socios
+\begin_inset Quotes frd
+\end_inset
+
+ haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Ver mis datos personales
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Será dirigido a la página siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename socios_mis_datos_socio.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Datos personales
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En caso de querer modificar sus datos haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Modificar
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Vaya a la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Modificar-mis-datos"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ para más información.
+\end_layout
+
 \begin_layout Subsubsection
 Modificar mis datos personales
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Modificar-mis-datos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dentro de la sección 
+\begin_inset Quotes fld
+\end_inset
+
+Ver mis datos personales
+\begin_inset Quotes frd
+\end_inset
+
+ de 
+\begin_inset Quotes fld
+\end_inset
+
+Socios
+\begin_inset Quotes frd
+\end_inset
+
+, al hacer click en el botón 
+\begin_inset Quotes fld
+\end_inset
+
+Modificar
+\begin_inset Quotes frd
+\end_inset
+
+ será redirigido a un formulario con sus valores actuales.
+ Modifíquelos y pulse el botón 
+\begin_inset Quotes fld
+\end_inset
+
+Guardar nuevos valores
+\begin_inset Quotes frd
+\end_inset
+
+ para que los cambios se hagan efectivos.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename socios_modificar_socio.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modificar usuario
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tras la modificación será redirigido a la página de acceso.
 \end_layout
 
 \begin_layout Subsection
 Plantaciones
 \end_layout
 
+\begin_layout Standard
+Desde la página de inicio haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Plantaciones
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename plantaciones_socio.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Página de plantaciones
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Ver mis plantaciones
 \end_layout
 
-\begin_layout Subsubsection
-Modificar los datos de una plantacion
+\begin_layout Standard
+Desde la página de 
+\begin_inset Quotes fld
+\end_inset
+
+Plantaciones
+\begin_inset Quotes frd
+\end_inset
+
+ haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Ver mis plantaciones
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Las plantaciones son mostradas a 15 unidades por página, ordenadas por
+ número de identificador en sentido ascendente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename plantaciones_mis_plantaciones.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mis plantaciones
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
 Cerrar sesión
+\end_layout
+
+\begin_layout Standard
+Haciendo click en el botón 
+\begin_inset Quotes fld
+\end_inset
+
+Salir
+\begin_inset Quotes frd
+\end_inset
+
+ en la esquina superior derecha podrá cerrar sesión.
+ Será redirigido a la página de inicio de sesión.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename volver_inicio.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Menú superior
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -6016,7 +6313,7 @@ Modificar usuario
 \end_layout
 
 \begin_layout Standard
-Tras la modificación será redirigido al login.
+Tras la modificación será redirigido a la página de acceso.
 \end_layout
 
 \begin_layout Subsubsection
@@ -6399,7 +6696,7 @@ Salir
 \end_inset
 
  en la esquina superior derecha podrá cerrar sesión.
- Será redirigido a la página de inicio de sesión.
+ Será redirigido a la página de acceso.
 \end_layout
 
 \begin_layout Standard
@@ -6407,7 +6704,7 @@ Salir
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
