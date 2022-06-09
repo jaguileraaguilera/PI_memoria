@@ -113,8 +113,92 @@ LatexCommand tableofcontents
 
 \end_layout
 
-\begin_layout Abstract
-asdfas
+\begin_layout Part
+Resumen-Abstract
+\end_layout
+
+\begin_layout Standard
+En la actualidad, las básculas de COSAFRA SCA se encuentran en un proceso
+ de informatización «intermedio»: Si bien los registros de entrada se llevan
+ a cabo con un ordenador conectado a la base de datos del sistema, para
+ cada registro que se realiza se imprime un comprobante que se entrega al
+ socio.
+ Se ha detectado que el programa actual con el que se realizan los pesos
+ cuenta con diversos problemas.
+ Por ello, valorando ventajas y desventajas, se ha pensado en digitalizar
+ su funcionamiento al completo mediante una aplicación web.
+ La aplicación debe de contar con los siguientes requisitos técnicos: 
+\end_layout
+
+\begin_layout Itemize
+Usuarios: Debe distinguir entre tres tipos de usuarios distintos:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Administrador: Con acceso a todas las funcionalidades del sistema.
+ Este rol se corresponde con un empleado de administración de la oficina.
+ 
+\end_layout
+
+\begin_layout Itemize
+Pesador: Este rol será desempeñado por un empleado con formación para usar
+ la báscula.
+ Contará con acceso a todas las funcionalidades propias del proceso de una
+ entrega de producto.
+\end_layout
+
+\begin_layout Itemize
+Socio: Solo podrá acceder a operaciones de lectura a excepción de la modificació
+n de sus datos personales.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Funcionamiento: Cada vez que una entrega es realizada, la aplicación deberá
+ de enviar al socio un correo electrónico con los datos de la entrega realizada.
+\end_layout
+
+\begin_layout Standard
+Currently, the COSAFRA SCA scales are in an "intermediate" computerization
+ process: Although the input records are carried out with a computer connected
+ to the system's database, for each record that is made, a ticket is delivered
+ to the partner.
+ It has been detected that the current program with which the weights are
+ made has various problems.
+ For this reason, considering advantages and disadvantages, it has been
+ thought of digitizing its entire operation through a web application.
+ The application must have the following technical requirements: 
+\end_layout
+
+\begin_layout Itemize
+Users: It must distinguish between three different types of users: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Administrator: With access to all the functionalities of the system.
+ This role corresponds to an office administration employee.
+ 
+\end_layout
+
+\begin_layout Itemize
+Weigher: This role will be performed by an employee trained to use the scale.
+ He will have access to all the functionalities of the product delivery
+ process.
+\end_layout
+
+\begin_layout Itemize
+Partner: Partners can only access reading operations except for the modification
+ of his personal data.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Operation: Every time a delivery is made, the application must send the
+ partner an email with the details of the delivery made.
+ 
 \end_layout
 
 \begin_layout Part
@@ -471,8 +555,44 @@ Requerimientos de hardware y software
 En el cliente
 \end_layout
 
+\begin_layout Itemize
+Requisitos mínimos de software y hardware necesarios para poder correr un
+ navegador web actualizado.
+\end_layout
+
+\begin_layout Itemize
+Conexión a Internet.
+\end_layout
+
 \begin_layout Section
 En el servidor
+\end_layout
+
+\begin_layout Itemize
+Tener instalada la pila XAMP y capacidad de procesado suficiente para atender
+ a todas las peticiones:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+X (Windows, Linux, Mac OS, ...).
+\end_layout
+
+\begin_layout Itemize
+A: Apache (NGINX también podría usarse).
+\end_layout
+
+\begin_layout Itemize
+M: MySQL/MariaDB
+\end_layout
+
+\begin_layout Itemize
+P: PHP
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Conexión a Internet.
 \end_layout
 
 \begin_layout Part
@@ -769,7 +889,7 @@ Los subdirectorios serán objeto de análisis en subsecciones siguientes.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -907,7 +1027,7 @@ index.php
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1025,7 +1145,7 @@ autoloader.php
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1143,7 +1263,7 @@ helpers.php
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1221,7 +1341,7 @@ composer.json
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1299,7 +1419,7 @@ composer.lock
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -4785,7 +4905,7 @@ Entregas
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -5085,7 +5205,7 @@ Modificar usuario
 \end_layout
 
 \begin_layout Standard
-Tras la modificación será redirigido al login.
+Tras la modificación será redirigido a la página de acceso.
 \end_layout
 
 \begin_layout Subsection
@@ -6092,15 +6212,15 @@ El rol aparece como un desplegable con los siguientes valores posibles:
 \end_layout
 
 \begin_layout Itemize
-Socio
+Socio.
 \end_layout
 
 \begin_layout Itemize
-Pesador
+Pesador.
 \end_layout
 
 \begin_layout Itemize
-Administrador
+Administrador.
 \end_layout
 
 \begin_layout Standard
@@ -6313,7 +6433,7 @@ Modificar usuario
 \end_layout
 
 \begin_layout Standard
-Tras la modificación será redirigido al login.
+Tras la modificación será redirigido a la página de acceso.
 \end_layout
 
 \begin_layout Subsubsection
@@ -6696,7 +6816,7 @@ Salir
 \end_inset
 
  en la esquina superior derecha podrá cerrar sesión.
- Será redirigido a la página de inicio de sesión.
+ Será redirigido a la página de acceso.
 \end_layout
 
 \begin_layout Standard
@@ -8232,8 +8352,9 @@ Técnicas
 \end_layout
 
 \begin_layout Itemize
-En caso de que la aplicación detecte que la báscula esté conectada al dispositiv
-o, podría rellenar automáticamente el peso bruto de la entrega.
+Sí la aplicación fuera capaz de detectar que la báscula se encuentra físicamente
+ conectada al dispositivo, podría rellenar automáticamente el peso bruto
+ de la entrega.
  
 \end_layout
 
