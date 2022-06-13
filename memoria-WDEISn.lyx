@@ -1,0 +1,9018 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Proyecto Integrado: Digitalización de las básculas de COSAFRA SCA
+\end_layout
+
+\begin_layout Author
+Javier Aguilera Aguilera 2º CFGS Desarrollo de Aplicaciones Web
+\end_layout
+
+\begin_layout Address
+Tutora: María Belén Callejón Prieto
+\end_layout
+
+\begin_layout Address
+Departamento de Informática y Comunicaciones - IES Francisco Ayala
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Resumen-Abstract
+\end_layout
+
+\begin_layout Standard
+En la actualidad, las básculas de COSAFRA SCA se encuentran en un proceso
+ de informatización «intermedio»: Si bien los registros de entrada se llevan
+ a cabo con un ordenador conectado a la base de datos del sistema, para
+ cada registro que se realiza se imprime un comprobante que se entrega al
+ socio.
+ Se ha detectado que el programa actual con el que se realizan los pesos
+ cuenta con diversos problemas.
+ Por ello, valorando ventajas y desventajas, se ha pensado en digitalizar
+ su funcionamiento al completo mediante una aplicación web.
+ La aplicación debe de contar con los siguientes requisitos técnicos: 
+\end_layout
+
+\begin_layout Itemize
+Usuarios: Debe distinguir entre tres tipos de usuarios distintos:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Administrador: Con acceso a todas las funcionalidades del sistema.
+ Este rol se corresponde con un empleado de administración de la oficina.
+ 
+\end_layout
+
+\begin_layout Itemize
+Pesador: Este rol será desempeñado por un empleado con formación para usar
+ la báscula.
+ Contará con acceso a todas las funcionalidades propias del proceso de una
+ entrega de producto.
+\end_layout
+
+\begin_layout Itemize
+Socio: Solo podrá acceder a operaciones de lectura a excepción de la modificació
+n de sus datos personales.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Funcionamiento: Cada vez que una entrega es realizada, la aplicación deberá
+ de enviar al socio un correo electrónico con los datos de la entrega realizada.
+\end_layout
+
+\begin_layout Standard
+Currently, the COSAFRA SCA scales are in an "intermediate" computerization
+ process: Although the input records are carried out with a computer connected
+ to the system's database, for each record that is made, a ticket is delivered
+ to the partner.
+ It has been detected that the current program with which the weights are
+ made has various problems.
+ For this reason, considering advantages and disadvantages, it has been
+ thought of digitizing its entire operation through a web application.
+ The application must have the following technical requirements: 
+\end_layout
+
+\begin_layout Itemize
+Users: It must distinguish between three different types of users: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Administrator: With access to all the functionalities of the system.
+ This role corresponds to an office administration employee.
+ 
+\end_layout
+
+\begin_layout Itemize
+Weigher: This role will be performed by an employee trained to use the scale.
+ He will have access to all the functionalities of the product delivery
+ process.
+\end_layout
+
+\begin_layout Itemize
+Partner: Partners can only access reading operations except for the modification
+ of his personal data.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Operation: Every time a delivery is made, the application must send the
+ partner an email with the details of the delivery made.
+ 
+\end_layout
+
+\begin_layout Part
+Enunciado del problema
+\end_layout
+
+\begin_layout Standard
+El siguiente desarrollo se ha realizado con el objectivo de informatizar
+ al completo las básculas de recepción de espárragos con las que cuenta
+ COSAFRA SCA.
+ 
+\end_layout
+
+\begin_layout Standard
+En la actualidad, las básculas se encuentran en un proceso de informatización
+ 
+\begin_inset Quotes fld
+\end_inset
+
+intermedio
+\begin_inset Quotes frd
+\end_inset
+
+: Si bien los registros de entrada se llevan a cabo con un ordenador conectado
+ a la base de datos del sistema, para cada registro que se realiza se imprime
+ un comprobante que se entrega al socio.
+\end_layout
+
+\begin_layout Standard
+Se ha detectado que el programa actual con el que se realizan los pesos
+ cuenta con diversos problemas:
+\end_layout
+
+\begin_layout Itemize
+Se ejecuta en local.
+ Debido a ello, al menor fallo en el dispositivo bien sea por problemas
+ de rendimiento, fallos del sistema operativo u otros, la báscula queda
+ inutilizada con todos los perjucios que esto supone.
+ Nuestro objetivo, al migrarla a una aplicación web, es añadir redundancia
+ al sistema, permitiendo acceder al funcionamiento de la báscula desde cualquier
+ dispositivo que cuente con un navegador web y acceso a Internet.
+\end_layout
+
+\begin_layout Itemize
+Imprimir el ticket conlleva una serie de problemas que con la virtualización
+ del proceso queremos atajar:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Costes fijos: Asociados al papel, tinta para la impresión, renovación de
+ las impresoras.
+\end_layout
+
+\begin_layout Itemize
+Tiempos de espera: Debidos a la impresión del comprobante.
+\end_layout
+
+\begin_layout Itemize
+Fallos recurrentes: La impresora se ha quedado sin tinta y no se dispone
+ de recambio, la impresora se ha atascado, el papel se ha agotado (los ticket
+ se imprimen en papel con un tamaño específico), el gestor de la cola de
+ impresión no responde a la petición, etc.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+La digitalización total de la báscula también cuenta con sus inconvenientes:
+\end_layout
+
+\begin_layout Itemize
+Competencias digitales reducidas: Los socios de la cooperativa, en buena
+ parte, son personas de cierta edad y no cuentan con las competencias digitales
+ necesarias para poder usar un dispositivo electrónico en el que consultar
+ sus entregas.
+ Esta deficiencia se ha pensado subsanarla de dos formas distintas:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Impartiendo formación por parte de los empleados de la oficina de COSAFRA
+ a los socios sobre funcionamiento del portal web.
+\end_layout
+
+\begin_layout Enumerate
+En caso de que aún siga habiendo socios que no puedan usar bien la aplicación,
+ éstos podrán ir a la oficina y solicitar la impresión de los comprobantes.
+ Se siguen imprimiendo los comprobantes pero ese tiempo de impresión ha
+ sido trasladado del proceso de pesado a la oficina como una gestión a posterior
+i, con los beneficios para el buen funcionamiento de la báscula que esto
+ supone.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Idoneidad de la inversión: Como hijo de un socio me atrevería a afirmar
+ que la cooperativa en estos momentos cuenta con problemas más importantes
+ que la digitalización total de la báscula.
+ Sería cuestión de que los socios discutiesen sobre si es una inversión
+ necesaria o si es preferible orientar esos fondos en otra dirección más
+ provechosa.
+\end_layout
+
+\begin_layout Itemize
+Alcance de la aplicación: Puestos a invertir en digitalización, hagámoslo
+ con la cadena de producción al completo.
+ Para ello, más que una aplicación web como 
+\begin_inset Quotes fld
+\end_inset
+
+parche
+\begin_inset Quotes frd
+\end_inset
+
+ a un problema concreto, que es lo que propongo en este memoria, yo aconsejaría
+ a la cooperativa trasladar su problema a una consultoría y estudiar su
+ caso con detalle.
+ Probablemente los productos más adecuado para sus necesidades serían un
+ sistema ERP o algún otro tipo de software de gestión.
+ Esto sería muy interesante de cara a automatizar el proceso de las liquidacione
+s económica trimestrales, que llevan un aproximadamente un mes para realizarlas
+ con el coste asociado de cinco trabajadores en la oficina realizando cálculos
+ tediosos, imprimiendo y revisando cientos de facturas y albaranes.
+\end_layout
+
+\begin_layout Standard
+La aplicación debe de contar con los siguientes requisitos técnicos:
+\end_layout
+
+\begin_layout Itemize
+Usuarios: Debe distinguir entre tres tipos de usuarios distintos:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Administrador: Con acceso a todas las funcionalidades del sistema.
+ Este rol se corresponde con un empleado de administración de la oficina.
+\end_layout
+
+\begin_layout Itemize
+Pesador: Este rol será desempeñado por un empleado con formación para usar
+ la báscula.
+ Contará con acceso a todas las funcionalidades propias del proceso de una
+ entrega de producto:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Realizar una nueva entrega.
+\end_layout
+
+\begin_layout Itemize
+Modificar los datos de una entrega existente.
+\end_layout
+
+\begin_layout Itemize
+Listar todas las entregas del sistema.
+\end_layout
+
+\begin_layout Itemize
+Eliminar una entrega del sistema.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Socio: Solo podrá acceder a operaciones de lectura a excepción de la modificació
+n de sus datos personales.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Funcionamiento: Cada vez que una entrega es realizada, la aplicación deberá
+ de enviar al socio un correo electrónico con los datos de la entrega realizada:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Identificador con el número de ticket.
+\end_layout
+
+\begin_layout Itemize
+Nombre del producto.
+\end_layout
+
+\begin_layout Itemize
+Peso bruto en kilogramos.
+\end_layout
+
+\begin_layout Itemize
+Tara en kilogramos.
+\end_layout
+
+\begin_layout Itemize
+Peso neto en kilogramos.
+\end_layout
+
+\begin_layout Itemize
+Fecha de entrada en el sistema.
+\end_layout
+
+\begin_layout Itemize
+Hora de entrada en el sistema.
+\end_layout
+
+\begin_layout Itemize
+Zona de procedencia del producto.
+\end_layout
+
+\begin_layout Itemize
+Datos del socio: Número de identificación en el sistema, nombre y apellidos.
+\end_layout
+
+\end_deeper
+\begin_layout Part
+Tecnologías empleadas
+\end_layout
+
+\begin_layout Standard
+Para la implementación han sido necesarias las siguientes tecnologías:
+\end_layout
+
+\begin_layout Itemize
+PHP: Presenta una serie de características que lo hacen idóneo para el desarroll
+o de este proyecto:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ser de código abierto y multiplataforma: No es necesario pagar algún tipo
+ de licencia para su uso y permite ser ejecutado en los principales sistemas
+ operativos (Windows y Unix-like).
+\end_layout
+
+\begin_layout Itemize
+Se ejecuta en el servidor: Dados los límitados recursos informáticos con
+ los que cuenta la cooperativa, para que no sea necesario la renovación
+ de sus equipos informáticos se ha buscado que la aplicación web sea lo
+ más ligera posible.
+ PHP permite crear aplicaciones web dinámicas muy ligeras, ya que el preprocesad
+o se realiza en el servidor, y al cliente únicamente le llega código HTML
+ a interpretar en el navegador.
+\end_layout
+
+\begin_layout Itemize
+Acceso a funcionalidades propias de un lenguaje que se ejecuta en el servidor,
+ como el servicio de envío de correo electrónico implementado usando la
+ biblioteca de funciones PHPMailer (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/PHPMailer/PHPMailer
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+Documentación: Tanto la documentación oficial (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.php.net/docs.php
+\end_layout
+
+\end_inset
+
+) así como la que se puede encontrar navegando por la web es muy variada
+ y completa debido a la popularidad del lenguaje.
+\end_layout
+
+\begin_layout Itemize
+Acceso a bases de datos: Usando PDO (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.php.net/manual/es/book.pdo.php
+\end_layout
+
+\end_inset
+
+), una interfaz de acceso a bases de datos ya definida por el lenguaje,
+ podemos independientemente de la base de datos que estemos usando utilizar
+ las mismas funciones para realizar consultas y obtener datos.
+ Esto permite migrar con facilidad de un sistema de gestión de bases de
+ datos a otro.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Bootstrap: De código abierto, biblioteca de plantillas de diseño con tipografías
+, formularios, botones y otros elementos de diseño basada en HTML y CSS.
+ Ha sido usada debido a:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Reutilización de código: Bootstrap trae definida en su hoja de estilos una
+ serie de reglas muy útiles para dotar de un diseño consistente de forma
+ sencilla a una aplicación web.
+ Solamente es necesario descargarse su hoja de estilos y enlazarla adecuadamente
+ con el proyecto.
+\end_layout
+
+\begin_layout Itemize
+Personalización: Aquellas características de Bootstrap que no nos resulten
+ adecuadas para el proyecto pueden ser modificadas a posteriori con una
+ hojas de estilos propias que son ejecutadas sobreescribiendo el conjunto
+ de reglas CSS que deseamos alterar.
+\end_layout
+
+\begin_layout Itemize
+Documentación: Cuenta con ejemplos de código HTML para gran variedad de
+ estructuras comunes a cualquier tipo de aplicación web.
+ Enlace a la documentación: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+https://getbootstrap.com/docs/5.2/getting-started/introduction/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+MariaDB: Sistema de gestión de bases de datos con alta compatibilidad con
+ MySQL, pudiendo ser ambos intercambiables en la mayoría de casos.
+ Surgió a raíz de la compra de Sun Microsystems por parte de Oracle con
+ el objetivo de asegurar la existencia de una versión de MySQL con licencia
+ GPL.
+\end_layout
+
+\begin_layout Part
+Requerimientos de hardware y software
+\end_layout
+
+\begin_layout Section
+En el cliente
+\end_layout
+
+\begin_layout Itemize
+Contar con conexión a Internet para acceder a la web.
+\end_layout
+
+\begin_layout Standard
+Para poder visualizar correctamente la página web es necesario poder usar
+ las hojas de estilo de Bootstrap cuyos requisitos mínimos son:
+\end_layout
+
+\begin_layout Itemize
+Google Chrome 
+\begin_inset Formula $>=$
+\end_inset
+
+ 60
+\end_layout
+
+\begin_layout Itemize
+Firefox 
+\begin_inset Formula $>=$
+\end_inset
+
+ 60
+\end_layout
+
+\begin_layout Itemize
+Firefox ESR
+\end_layout
+
+\begin_layout Itemize
+iOS 
+\begin_inset Formula $>=$
+\end_inset
+
+ 12
+\end_layout
+
+\begin_layout Itemize
+Safari 
+\begin_inset Formula $>=$
+\end_inset
+
+ 12
+\end_layout
+
+\begin_layout Itemize
+Internet Explorer no está soportado.
+\end_layout
+
+\begin_layout Section
+En el servidor
+\end_layout
+
+\begin_layout Itemize
+Tener instalada la pila XAMP y capacidad de procesado suficiente para atender
+ a todas las peticiones:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+X: Windows, Linux, Mac OS X ...
+ (Por ahorro de costes se recomiendan Debian, Ubuntu Server u Oracle Linux)
+\end_layout
+
+\begin_layout Itemize
+A: Apache 
+\end_layout
+
+\begin_layout Itemize
+M: MariaDB 
+\end_layout
+
+\begin_layout Itemize
+P: PHP 
+\begin_inset Formula $>=$
+\end_inset
+
+ 8.0.19
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Composer (gestor de dependencias de PHP).
+\end_layout
+
+\begin_layout Itemize
+Conexión a Internet.
+\end_layout
+
+\begin_layout Standard
+También se puede optar por un servicio de hosting en la nube y calcular
+ los costes asociados que puede tener la página.
+ Dependiendo del proveedor las tarifas pueden variar.
+\end_layout
+
+\begin_layout Part
+Análisis y diseño
+\end_layout
+
+\begin_layout Standard
+A partir del enunciado del problema se ha realizado un análisis que consta
+ del estudio de los casos de uso y un diagrama modelo-relacional de cara
+ a implementar las clases necesarias para la resolución del problema.
+\end_layout
+
+\begin_layout Section
+Casos de uso
+\end_layout
+
+\begin_layout Subsection
+Notación usada
+\end_layout
+
+\begin_layout Standard
+Para mejor comprensión del diagrama de casos de uso se han seguido las siguiente
+s convenciones:
+\end_layout
+
+\begin_layout Itemize
+Cada caso de uso está precedido por una letra: C, R, U o D, que signican
+\emph on
+ create
+\emph default
+, 
+\emph on
+read
+\emph default
+, 
+\emph on
+update
+\emph default
+ y 
+\emph on
+delete
+\emph default
+, respectivamente.
+\end_layout
+
+\begin_layout Itemize
+Si en un mismo caso de uso aparece más de una letra (por ejemplo: CUD_entrega)
+ es por cuestiones de economía de espacio (no caben todos los casos de uso
+ en un mismo diagrama de contexto) y legibilidad.
+ CUD_entrega sería equivalente a C_entrega, U_entrega y D_entrega.
+\end_layout
+
+\begin_layout Subsection
+Diagrama
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename dia_casos_uso.png
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de casos de uso
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagrama de clases
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename dia_clases_horizontal-1.png
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de clases
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Descripción de la base de datos
+\end_layout
+
+\begin_layout Subsection
+Diagrama Entidad-Relación
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename diar_er_cooperativa.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama Entidad-Relación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Diseño físico de la base de datos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename esquema_bd.png
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquema de la Base de Datos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Implementación
+\end_layout
+
+\begin_layout Section
+Patrón de diseño y clases implementadas
+\end_layout
+
+\begin_layout Subsection
+Patrón de diseño
+\end_layout
+
+\begin_layout Standard
+En la implementación del proyecto se ha utilizado una mezcla del patrón
+ Modelo, Vista, Controlador (MVC) con el patrón Repository (sin el uso de
+ interfaces).
+\end_layout
+
+\begin_layout Standard
+Usando el patrón Repository se ha agrupado todas las operaciones del CRUD
+ en una única clase.
+ Para lograr el desacople entre el objeto que gestiona las llamadas y el
+ que se encarga de tratar los datos se hace necesaria una clase intermedia
+ (servicio) que hará como punto de entrada de la gestión de datos.
+ En el diagrama siguiente se visualiza el funcionamiento del sistema:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename patron_diseño.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+MVC - Patrón Repository
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Siguiendo el patrón de diseño y considerando el diagrama de clases y los
+ casos de uso estudiados, se hacen necesarias las siguientes clases:
+\end_layout
+
+\begin_layout Subsection
+Modelos
+\end_layout
+
+\begin_layout Standard
+Aunque para cada atributo de la clase se han definido unos métodos 
+\emph on
+getter 
+\emph default
+y 
+\emph on
+setter
+\emph default
+, se ha optado por hacerlos públicos para poder iterarlos con facilidad
+ mediante un bucle foreach sin tener que implementar la interfaz Iterator.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.php.net/manual/es/language.oop5.iterations.php
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename clase_entrega.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Clase Entrega
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename clase_plantacion.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Clase Plantacion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename clase_usuario.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Clase Usuario
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para cada uno de los modelos se ha creado un método estático fromArray cuyo
+ objetivo es realizar el mapeo de un array de datos (obtenido en una consulta
+ SQL) a un objeto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename fromArray.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+fromArray
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Controladores
+\end_layout
+
+\begin_layout Subsubsection
+EntregaController
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename entregaController_constructor.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Constructor de EntregaController
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Métodos públicos
+\end_layout
+
+\begin_layout Itemize
+opciones_entrega() : void
+\end_layout
+
+\begin_layout Itemize
+listar() : array
+\end_layout
+
+\begin_layout Itemize
+mis_entregas() : array
+\end_layout
+
+\begin_layout Itemize
+ver_form_alta() : void
+\end_layout
+
+\begin_layout Itemize
+get_ultima_entrega() : ?Entrega
+\end_layout
+
+\begin_layout Itemize
+borrar() : void
+\end_layout
+
+\begin_layout Itemize
+ver_form_modificar() : Entrega
+\end_layout
+
+\begin_layout Itemize
+modificar() : void
+\end_layout
+
+\begin_layout Itemize
+alta() : void
+\end_layout
+
+\begin_layout Itemize
+enviar_ticket(float $tara, float $bruto, float $neto, string $fecha, string
+ $hora, string $id_plantacion) : void
+\end_layout
+
+\begin_layout Subsubsection
+PlantacionController
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename plantacionController_constructor.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Constructor de plantacionController
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Métodos públicos
+\end_layout
+
+\begin_layout Itemize
+opciones_plantacion() : void
+\end_layout
+
+\begin_layout Itemize
+extraer_todas() : array
+\end_layout
+
+\begin_layout Itemize
+listar() : void
+\end_layout
+
+\begin_layout Itemize
+datos_plantacion(int $id_plantacion): Plantacion
+\end_layout
+
+\begin_layout Itemize
+ver_form_modificar() : Plantacion
+\end_layout
+
+\begin_layout Itemize
+borrar() : void
+\end_layout
+
+\begin_layout Itemize
+mis_plantaciones() : array
+\end_layout
+
+\begin_layout Itemize
+ver_form_alta() : void
+\end_layout
+
+\begin_layout Itemize
+modificar() : void
+\end_layout
+
+\begin_layout Itemize
+alta() : void
+\end_layout
+
+\begin_layout Subsubsection
+UsuarioController
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename usuarioController_constructor.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Constructor de usuarioController
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Métodos públicos
+\end_layout
+
+\begin_layout Itemize
+login() : void
+\end_layout
+
+\begin_layout Itemize
+logout() : void
+\end_layout
+
+\begin_layout Itemize
+opciones_usuario() : void
+\end_layout
+
+\begin_layout Itemize
+extraer_todos() : array
+\end_layout
+
+\begin_layout Itemize
+listar() : void
+\end_layout
+
+\begin_layout Itemize
+ver_form_modificar() : void
+\end_layout
+
+\begin_layout Itemize
+mis_datos() : void
+\end_layout
+
+\begin_layout Itemize
+ver_form_alta() : void
+\end_layout
+
+\begin_layout Itemize
+borrar() : void
+\end_layout
+
+\begin_layout Itemize
+alta() : void
+\end_layout
+
+\begin_layout Itemize
+modificar() : void
+\end_layout
+
+\begin_layout Itemize
+get_usuario_from_plantacion(int $id_plantacion) : Usuario
+\end_layout
+
+\begin_layout Subsection
+Servicios
+\end_layout
+
+\begin_layout Subsubsection
+EntregaService
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename entregaService_constructor.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Constructor de EntregaService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Métodos públicos
+\end_layout
+
+\begin_layout Itemize
+listar() : array
+\end_layout
+
+\begin_layout Itemize
+borrar(int $id_entrega) : void
+\end_layout
+
+\begin_layout Itemize
+datos_entrega(int $id_entrega) : ?Entrega
+\end_layout
+
+\begin_layout Itemize
+datos_entregas_correo(string $correo) : array
+\end_layout
+
+\begin_layout Itemize
+alta(float $tara, float $bruto, float $neto, string $fecha, string $hora,
+ int $id_plantacion) : int
+\end_layout
+
+\begin_layout Itemize
+modificar(int $id_entrega, array $parametros) : void
+\end_layout
+
+\begin_layout Itemize
+get_ultima_entrega() : ?Entrega
+\end_layout
+
+\begin_layout Subsubsection
+PlantacionService
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename plantacionService_constructor.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Constructor de PlantacionService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Métodos públicos
+\end_layout
+
+\begin_layout Itemize
+listar() : array
+\end_layout
+
+\begin_layout Itemize
+borrar(int $id_plantacion) : void
+\end_layout
+
+\begin_layout Itemize
+datos_plantaciones(string $correo) : array
+\end_layout
+
+\begin_layout Itemize
+datos_plantacion_id(int $id) : ?Plantacion
+\end_layout
+
+\begin_layout Itemize
+alta(string $variedad, string $anio, int $zona, int $id_usuario) : void
+\end_layout
+
+\begin_layout Itemize
+modificar(int $id_plantacion, array $parametros) : void
+\end_layout
+
+\begin_layout Subsubsection
+UsuarioService
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename usuarioService_constructor.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Constructor de UsuarioService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Métodos públicos
+\end_layout
+
+\begin_layout Itemize
+login(string $correo, string $password) : ?Usuario
+\end_layout
+
+\begin_layout Itemize
+listar() : array
+\end_layout
+
+\begin_layout Itemize
+borrar(string $id_usuario) : void
+\end_layout
+
+\begin_layout Itemize
+datos_usuario(int $id_usuario) : ?Usuario
+\end_layout
+
+\begin_layout Itemize
+datos_usuario_correo($correo) : ?Usuario
+\end_layout
+
+\begin_layout Itemize
+alta(array $campos_validados, string $correo, string $password, int $rol)
+ : void
+\end_layout
+
+\begin_layout Itemize
+modificar(int $id_usuario, array $campos_validados) : void
+\end_layout
+
+\begin_layout Subsection
+Repositorios
+\end_layout
+
+\begin_layout Subsubsection
+EntregaRepository
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename entregaRepository_constructor.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Constructor de EntregaRepository
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Métodos públicos
+\end_layout
+
+\begin_layout Itemize
+extraer_registro() : ?Entrega
+\end_layout
+
+\begin_layout Itemize
+extraer_todos() : array
+\end_layout
+
+\begin_layout Itemize
+listar() : array
+\end_layout
+
+\begin_layout Itemize
+datos_entrega(int $id_entrega) : ?Entrega
+\end_layout
+
+\begin_layout Itemize
+datos_entregas_correo(string $correo) : array
+\end_layout
+
+\begin_layout Itemize
+borrar(int $id_entrega): void
+\end_layout
+
+\begin_layout Itemize
+modificar(int $id_entrega, array $parametros): void
+\end_layout
+
+\begin_layout Itemize
+alta(float $tara, float $bruto, float $neto, string $fecha, string $hora,
+ int $id_plantacion): int
+\end_layout
+
+\begin_layout Itemize
+get_ultima_entrega(): ?Entrega
+\end_layout
+
+\begin_layout Subsubsection
+PlantacionRepository
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename plantacionService_constructor.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Constructor de plantacionService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Métodos públicos
+\end_layout
+
+\begin_layout Itemize
+extraer_registro() : ?Plantacion
+\end_layout
+
+\begin_layout Itemize
+extraer_todos() : array
+\end_layout
+
+\begin_layout Itemize
+listar() : array
+\end_layout
+
+\begin_layout Itemize
+borrar(int $id_plantacion) : void
+\end_layout
+
+\begin_layout Itemize
+datos_plantaciones(string $correo) : array
+\end_layout
+
+\begin_layout Itemize
+datos_plantacion_id(int $id) : ?Plantacion
+\end_layout
+
+\begin_layout Itemize
+modificar(int $id_plantacion, array $parametros) : void
+\end_layout
+
+\begin_layout Itemize
+alta(string $variedad, int $anio, int $zona, int $id_usuario) : void
+\end_layout
+
+\begin_layout Subsubsection
+UsuarioRepository
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename usuarioService_constructor.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Constructor de usuarioService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Métodos públicos
+\end_layout
+
+\begin_layout Itemize
+extraer_registro() : ?Usuario
+\end_layout
+
+\begin_layout Itemize
+extraer_todos() : array
+\end_layout
+
+\begin_layout Itemize
+login(string $correo, string $password) : ?Usuario
+\end_layout
+
+\begin_layout Itemize
+listar() : array
+\end_layout
+
+\begin_layout Itemize
+borrar(int $id_usuario) : void
+\end_layout
+
+\begin_layout Itemize
+datos_usuario(int $id_usuario) : ?Usuario
+\end_layout
+
+\begin_layout Itemize
+datos_usuario_correo(string $correo) : ?Usuario
+\end_layout
+
+\begin_layout Itemize
+alta(array $campos_validados, string $correo, string $password, int $rol)
+ : void
+\end_layout
+
+\begin_layout Itemize
+modificar(int $id_usuario, array $parametros) : void
+\end_layout
+
+\begin_layout Itemize
+get_usuario_from_plantacion(int $id_plantacion) : ?Usuario
+\end_layout
+
+\begin_layout Section
+Conexión a la base de datos
+\end_layout
+
+\begin_layout Standard
+Para la conexión a la base de datos se ha utilizado una clase reutilizable
+ con PDO.
+ Su fichero de definición se encuentra en 
+\begin_inset Quotes fld
+\end_inset
+
+lib/BaseDatos.php
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename baseDatos_constructor.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Clase BaseDatos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Métodos públicos
+\end_layout
+
+\begin_layout Itemize
+consulta(string $consultaSQL) : void
+\end_layout
+
+\begin_layout Itemize
+extraer_registro(): mixed
+\end_layout
+
+\begin_layout Itemize
+extraer_todos(): array
+\end_layout
+
+\begin_layout Section
+Ficheros de configuración
+\end_layout
+
+\begin_layout Standard
+Se encuentran repartidos entre el raíz y config:
+\end_layout
+
+\begin_layout Subsection
+Raíz
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fichero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+composer.json
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Almacenar dependencias del proyecto
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+composer.json
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fichero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+composer.lock
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Guardar las versiones de los paquetes instalados como dependencias
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+composer.lock
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fichero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+.htaccess
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Permite realizar cambios en la configuración del sitio web
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sin editar la configuración del servidor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+.htaccess
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Config
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fichero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+config.php
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Definir parámetros de configuración
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+de la base de datos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+config.php
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fichero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+parameters.php
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Definir parámetros de configuración:
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+controlador por defecto, acción por defecto y url del raíz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+parameters.php
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Estructura de ficheros
+\end_layout
+
+\begin_layout Standard
+El proyecto se encuentra estructurado en ficheros agrupados por funcionalidades
+ comunes.
+\end_layout
+
+\begin_layout Section
+Estructura general
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename estructura_fich_gnl.png
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Estructura general
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los subdirectorios serán objeto de análisis en subsecciones siguientes.
+ Pasemos a examinar los ficheros con los que contamos en el raíz:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fichero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+index.php
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Controlador frontal
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Llama a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+config.php, parameter.php, autoloader.php
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+header.php, iniciar_sesion.php, footer.php
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Llamado por
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+index.php
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fichero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+autoloader.php
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cargar todos los controladores
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Llama a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Todos los ficheros de la carpeta controllers
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Llamado por
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+index.php
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+autoloader.php
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fichero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+helpers.php
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Funciones de uso auxiliar
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Llama a 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Llamado por
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+vistas formularios alta y modificación, tables/open.php 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+helpers.php
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+assets
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename estructura_fich_assets.png
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Assets
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+css
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fichero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bootstrap.css
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hoja de estilos de bootstrap
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Llama a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Llamado por
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+header.php
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+bootstrap.css
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fichero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+styles.css
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hoja de estilos propios
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Llama a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Llamado por
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+header.php
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+styles.css
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+img
+\end_layout
+
+\begin_layout Standard
+Contiene las imágenes usadas en el proyecto.
+\end_layout
+
+\begin_layout Subsection
+config 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename estructura_fich_config.png
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Config
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+controllers
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename estructura_fich_controllers.png
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Controllers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fichero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ErrorController.php
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Definir la clase ErrorController
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Llama a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Llamado por
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FrontController.php
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ErrorController.php
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fichero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FrontController.php
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Definir la clase FrontController
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Llama a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Resto de ficheros del directorio
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Llamado por
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+index.php
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+FrontController.php
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+database 
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:database"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename estructura_fich_database.png
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Database
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fichero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+database.sql
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Define la estructura de la base de datos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+database.sql
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fichero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+insert.sql
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Registros mínimos necesarios para hacer funcionar la base de datos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+insert.sql
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+lib
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename estructura_fich_lib.png
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Lib
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fichero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BaseDatos.php
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Definir la clase BaseDatos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Acceso a BD
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Llama a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Llamado por
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+EntregaRepository.php, UsuarioRepository.php, PlantacionRepository.php
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+BaseDatos.php
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fichero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Paginador.php
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Definir la clase Paginador
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Llama a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Llamado por
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+EntregaController.php, UsuarioController.php, PlantacionController.php
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Paginador.php
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+models
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename estructura_fich_models.png
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Models
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+repositories
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename estructura_fich_repositories.png
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Repositories
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+services
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename estructura_fich_services.png
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Services
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+vendor
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename estructura_fich_vendor.png
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+vendor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sin entrar en detalles, en este directorio se encuentran alojados los ficheros
+ de configuración de Composer (gestor de dependencias) y PHPMailer.
+\end_layout
+
+\begin_layout Subsection
+views
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename estructura_fich_views.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+views
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos distinguir entre componentes que son comunes a la estructura de
+ la página web y que se han modularizado de cara a no repetir codigo como
+ son las 
+\begin_inset Quotes fld
+\end_inset
+
+migas de pan
+\begin_inset Quotes frd
+\end_inset
+
+ (
+\emph on
+breadcrumbs
+\emph default
+), distintos tipos de input, botones, etiquetas de input, formateado de
+ tablas, etc y aquellos que son propios de cada una de las clases con las
+ que trabajamos: Usuarios, entregas y plantaciones.
+ 
+\end_layout
+
+\begin_layout Standard
+De esta forma he intentado crear un sistema de plantillas que he ido usando
+ para contruir las vistas.
+ Para mayor profundidad, mejor consultar el código fuente.
+\end_layout
+
+\begin_layout Part
+Evaluación y prueba
+\end_layout
+
+\begin_layout Standard
+Se han realizado pruebas a todas las funcionalidades del CRUD para cada
+ una de las clases que disponemos, intentado introducir valores erróneos,
+ dejar campos sin rellenar ...
+ 
+\end_layout
+
+\begin_layout Standard
+A la hora de crear los formularios se han construido con la intención de
+ que el usuario tenga que introducir el mínimo número de valores posibles
+ usando inputs de tipo desplegable u ocultando a la vista los valores enviados
+ en el formulario.
+\end_layout
+
+\begin_layout Part
+Manual de usuario
+\end_layout
+
+\begin_layout Section
+Manual para el socio
+\end_layout
+
+\begin_layout Subsection
+Iniciar sesión
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename login_small.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pantalla de acceso al sitio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para acceder al sitio web son necesarios:
+\end_layout
+
+\begin_layout Itemize
+Correo electrónico
+\end_layout
+
+\begin_layout Itemize
+Contraseña
+\end_layout
+
+\begin_layout Standard
+En caso de que algún campo no sea introducido, el sitio automaticamente
+ solicitará su obligado ingreso:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename login_small_requerido.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Rellenar campos requeridos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si el alguno de los valores introducidos no coincidiesen con los almacenados
+ en la base de datos, será redirigido de nuevo al inicio de sesión para
+ que vuelva a ingresar los valores.
+\end_layout
+
+\begin_layout Standard
+Si las credenciales de acceso son válidas accederá a la página de inicio.
+\end_layout
+
+\begin_layout Subsection
+Página de inicio
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename inicio_socio.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Página de inicio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Volver a la página de inicio
+\end_layout
+
+\begin_layout Standard
+Para volver a inicio, podrá hacer click en el logotipo o haciendo click
+ en 
+\begin_inset Quotes fld
+\end_inset
+
+Inicio
+\begin_inset Quotes frd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename volver_inicio.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Menú superior
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Entregas
+\end_layout
+
+\begin_layout Subsubsection
+Página de entregas
+\end_layout
+
+\begin_layout Standard
+Desde la página de inicio haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Entregas
+\begin_inset Quotes frd
+\end_inset
+
+ y será redirigido a la siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename entregas_socio.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Página de entregas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Ver mis entregas
+\end_layout
+
+\begin_layout Standard
+Desde la página de 
+\begin_inset Quotes fld
+\end_inset
+
+Entregas
+\begin_inset Quotes frd
+\end_inset
+
+ haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Ver mis entregas
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Las entregas son mostradas a 15 unidades por página, ordenadas por número
+ de identificador en sentido ascendente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename mis_entregas_socio.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Página de mis entregas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Socios
+\end_layout
+
+\begin_layout Subsubsection
+Página de socios
+\end_layout
+
+\begin_layout Standard
+Desde la página de inicio haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Socios
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename mis_entregas_socio.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Página de mis entregas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Ver mis datos personales
+\end_layout
+
+\begin_layout Standard
+Desde la página de 
+\begin_inset Quotes fld
+\end_inset
+
+Socios
+\begin_inset Quotes frd
+\end_inset
+
+ haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Ver mis datos personales
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Será dirigido a la página siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename socios_mis_datos_socio.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Datos personales
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En caso de querer modificar sus datos haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Modificar
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Vaya a la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Modificar-mis-datos"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ para más información.
+\end_layout
+
+\begin_layout Subsubsection
+Modificar mis datos personales
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Modificar-mis-datos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dentro de la sección 
+\begin_inset Quotes fld
+\end_inset
+
+Ver mis datos personales
+\begin_inset Quotes frd
+\end_inset
+
+ de 
+\begin_inset Quotes fld
+\end_inset
+
+Socios
+\begin_inset Quotes frd
+\end_inset
+
+, al hacer click en el botón 
+\begin_inset Quotes fld
+\end_inset
+
+Modificar
+\begin_inset Quotes frd
+\end_inset
+
+ será redirigido a un formulario con sus valores actuales.
+ Modifíquelos y pulse el botón 
+\begin_inset Quotes fld
+\end_inset
+
+Guardar nuevos valores
+\begin_inset Quotes frd
+\end_inset
+
+ para que los cambios se hagan efectivos.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename socios_modificar_socio.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modificar usuario
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tras la modificación será redirigido a la página de acceso.
+\end_layout
+
+\begin_layout Subsection
+Plantaciones
+\end_layout
+
+\begin_layout Standard
+Desde la página de inicio haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Plantaciones
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename plantaciones_socio.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Página de plantaciones
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Ver mis plantaciones
+\end_layout
+
+\begin_layout Standard
+Desde la página de 
+\begin_inset Quotes fld
+\end_inset
+
+Plantaciones
+\begin_inset Quotes frd
+\end_inset
+
+ haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Ver mis plantaciones
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Las plantaciones son mostradas a 15 unidades por página, ordenadas por
+ número de identificador en sentido ascendente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename plantaciones_mis_plantaciones.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mis plantaciones
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Cerrar sesión
+\end_layout
+
+\begin_layout Standard
+Haciendo click en el botón 
+\begin_inset Quotes fld
+\end_inset
+
+Salir
+\begin_inset Quotes frd
+\end_inset
+
+ en la esquina superior derecha podrá cerrar sesión.
+ Será redirigido a la página de inicio de sesión.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename volver_inicio.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Menú superior
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Manual para el administrador y el pesador
+\end_layout
+
+\begin_layout Subsection
+Iniciar sesión
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename login_small.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pantalla de acceso al sitio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para acceder al sitio web son necesarios:
+\end_layout
+
+\begin_layout Itemize
+Correo electrónico
+\end_layout
+
+\begin_layout Itemize
+Contraseña
+\end_layout
+
+\begin_layout Standard
+En caso de que algún campo no sea introducido, el sitio automaticamente
+ solicitará su obligado ingreso:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename login_small_requerido.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Rellenar campos requeridos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si el alguno de los valores introducidos no coincidiesen con los almacenados
+ en la base de datos, será redirigido de nuevo al inicio de sesión para
+ que vuelva a ingresar los valores.
+\end_layout
+
+\begin_layout Subsection
+Página de inicio
+\end_layout
+
+\begin_layout Standard
+Para volver a inicio, podrá hacer click en el logotipo o haciendo click
+ en 
+\begin_inset Quotes fld
+\end_inset
+
+Inicio
+\begin_inset Quotes frd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename volver_inicio.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Menú superior
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dependiendo de los permisos que le halla otorgado la organización, verá
+ una de las siguientes páginas de inicio:
+\end_layout
+
+\begin_layout Subsubsection
+Pesador
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename inicio_pesador.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Página de inicio del pesador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Administrador
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename inicio_admin.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Página de inicio del administrador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Entregas
+\end_layout
+
+\begin_layout Subsubsection
+Página de entregas
+\end_layout
+
+\begin_layout Standard
+Desde la página de inicio haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Entregas
+\begin_inset Quotes frd
+\end_inset
+
+ y será redirigido a la siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename entrega_admin_pesador.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Página de entregas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Realizar una nueva entrega
+\end_layout
+
+\begin_layout Standard
+Para realizar una nueva entrega, haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Nueva entrega
+\begin_inset Quotes frd
+\end_inset
+
+ y abrirá un formulario como el siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename entrega_nueva.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nueva entrega
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Rellene los valores bruto y tara.
+ Sólo admite valores de 0.5 kg en 0.5 kg, que es la sensibilidad de la báscula.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename entrega_alta_erronea.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Valores erróneos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si ingresa un valor incorrecto o alguno no estuviera relleno el formulario
+ no se enviaría.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename entrega_alta_valores_ausentes.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Valores ausentes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El identificador de la plantación aparece como un desplegable en el que
+ elige el número que corresponda a la plantación.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename entrega_desplegable.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Valores ausentes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez rellenados todos los valores, al pulsar el botón 
+\begin_inset Quotes fld
+\end_inset
+
+Dar de alta
+\begin_inset Quotes frd
+\end_inset
+
+ sucederá:
+\end_layout
+
+\begin_layout Itemize
+Al sistema se agregará una nueva entrega con los valores introducidos.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename entrega_registro.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nuevo registro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Al correo electrónico del socio al que pertenece la plantación le llegará
+ un mensaje con los datos del ticket creado.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ticket_socio.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ticket socio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+A la dirección de correo electrónico de la báscula llegará una copia del
+ correo enviado al socio.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ticket_bascula.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ticket báscula
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Limpiará los valores del formulario para poder realizar una nueva entrega.
+\end_layout
+
+\begin_layout Subsubsection
+Ver las entregas de todos los socios
+\end_layout
+
+\begin_layout Standard
+Desde la página de 
+\begin_inset Quotes fld
+\end_inset
+
+Entregas
+\begin_inset Quotes frd
+\end_inset
+
+ haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Ver todas
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Las entregas son mostradas a 15 unidades por página, ordenadas por número
+ de identificador en sentido ascendente.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename entrega_listado.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Listado de entregas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Borrar una entrega
+\end_layout
+
+\begin_layout Standard
+Dentro de la sección 
+\begin_inset Quotes fld
+\end_inset
+
+Ver todas
+\begin_inset Quotes frd
+\end_inset
+
+ de 
+\begin_inset Quotes fld
+\end_inset
+
+Entregas
+\begin_inset Quotes frd
+\end_inset
+
+, al hacer click en el botón 
+\begin_inset Quotes fld
+\end_inset
+
+Borrar
+\begin_inset Quotes frd
+\end_inset
+
+ eliminará el registro deseado.
+\end_layout
+
+\begin_layout Subsubsection
+Modificar una entrega
+\end_layout
+
+\begin_layout Standard
+Dentro de la sección 
+\begin_inset Quotes fld
+\end_inset
+
+Ver todas
+\begin_inset Quotes frd
+\end_inset
+
+ de 
+\begin_inset Quotes fld
+\end_inset
+
+Entregas
+\begin_inset Quotes frd
+\end_inset
+
+, al hacer click en el botón 
+\begin_inset Quotes fld
+\end_inset
+
+Modificar
+\begin_inset Quotes frd
+\end_inset
+
+ será redirigido a un formulario con los valores actuales de la entrega.
+ Modifíquelos y pulse el botón 
+\begin_inset Quotes fld
+\end_inset
+
+Guardar nuevos valores
+\begin_inset Quotes frd
+\end_inset
+
+ para que los cambios se hagan efectivos.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename entrega_modificar.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modificar entrega
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tras la modificación será redirigido al listado de entregas.
+\end_layout
+
+\begin_layout Subsection
+Socios
+\end_layout
+
+\begin_layout Subsubsection
+Página de socios
+\end_layout
+
+\begin_layout Standard
+Desde la página de inicio haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Socios
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Si sus permisos de uso de la aplicación son los de un administrador verá
+ la siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename socios_admin.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Página de socios
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Si sus permisos de uso de la aplicación son los de un pesador verá la siguiente:
+\end_layout
+
+\begin_layout Subsubsection
+Dar de alta un nuevo usuario en el sistema
+\end_layout
+
+\begin_layout Itemize
+Permisos necesarios: Administrador.
+\end_layout
+
+\begin_layout Standard
+Para dar de alta a un nuevo usuario en el sistema, haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Dar de alta a un nuevo usuario
+\begin_inset Quotes frd
+\end_inset
+
+ y abrirá un formulario como el siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename socios_alta.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Formulario alta
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El rol aparece como un desplegable con los siguientes valores posibles:
+\end_layout
+
+\begin_layout Itemize
+Socio.
+\end_layout
+
+\begin_layout Itemize
+Pesador.
+\end_layout
+
+\begin_layout Itemize
+Administrador.
+\end_layout
+
+\begin_layout Standard
+Si ingresa un valor incorrecto o alguno no estuviera relleno el formulario
+ no se enviaría.
+\end_layout
+
+\begin_layout Standard
+Una vez rellenados todos los valores, al pulsar el botón 
+\begin_inset Quotes fld
+\end_inset
+
+Dar de alta
+\begin_inset Quotes frd
+\end_inset
+
+ sucederá:
+\end_layout
+
+\begin_layout Itemize
+Al sistema se agregará un nuevo usuario con los valores introducidos.
+\end_layout
+
+\begin_layout Itemize
+Será automáticamente redirigido al listado de usuarios, para verificar que
+ el usuario ha sido efectivamente dado de alta.
+\end_layout
+
+\begin_layout Subsubsection
+Listar todos los socios actuales
+\end_layout
+
+\begin_layout Itemize
+Permisos necesarios: Administrador.
+\end_layout
+
+\begin_layout Standard
+Desde la página de 
+\begin_inset Quotes fld
+\end_inset
+
+Socios
+\begin_inset Quotes frd
+\end_inset
+
+ haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Ver todos
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Las usuarios son mostrados a 15 unidades por página, ordenados por número
+ de identificador en sentido ascendente.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename socios_listado.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Listado de socios
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Dar de baja un socio
+\end_layout
+
+\begin_layout Itemize
+Permisos necesarios: Administrador.
+\end_layout
+
+\begin_layout Standard
+Dentro de la sección 
+\begin_inset Quotes fld
+\end_inset
+
+Ver todos
+\begin_inset Quotes frd
+\end_inset
+
+ de 
+\begin_inset Quotes fld
+\end_inset
+
+Socios
+\begin_inset Quotes frd
+\end_inset
+
+, al hacer click en el botón 
+\begin_inset Quotes fld
+\end_inset
+
+Borrar
+\begin_inset Quotes frd
+\end_inset
+
+ eliminará el registro deseado.
+ No es posible borrarse a si mismo.
+ (Nota: El registro seguirá almacenado en la base de datos, pero su visibilidad
+ en la aplicación ha sido cambiada a oculto, en caso de querer recuperarlo
+ desde un sistema de gestión de bases de datos se puede realizar.)
+\end_layout
+
+\begin_layout Subsubsection
+Modificar los datos personales de un socio 
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Modificar-los-datos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Permisos necesarios: Administrador (en caso de modificar los datos de un
+ usuario que no sea uno mismo).
+\end_layout
+
+\begin_layout Standard
+Dentro de la sección 
+\begin_inset Quotes fld
+\end_inset
+
+Ver todos
+\begin_inset Quotes frd
+\end_inset
+
+ de 
+\begin_inset Quotes fld
+\end_inset
+
+Socios
+\begin_inset Quotes frd
+\end_inset
+
+, al hacer click en el botón 
+\begin_inset Quotes fld
+\end_inset
+
+Modificar
+\begin_inset Quotes frd
+\end_inset
+
+ será redirigido a un formulario con los valores actuales del usuario.
+ Modifíquelos y pulse el botón 
+\begin_inset Quotes fld
+\end_inset
+
+Guardar nuevos valores
+\begin_inset Quotes frd
+\end_inset
+
+ para que los cambios se hagan efectivos.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename socios_modificar.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modificar usuario
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tras la modificación será redirigido a la página de acceso.
+\end_layout
+
+\begin_layout Subsubsection
+Ver mis datos personales
+\end_layout
+
+\begin_layout Standard
+Desde la página de 
+\begin_inset Quotes fld
+\end_inset
+
+Socios
+\begin_inset Quotes frd
+\end_inset
+
+ haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Ver mis datos personales
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Será dirigido a la página siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename socios_mis_datos.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Datos personales
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En caso de querer modificar sus datos haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Modificar
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Vaya a la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Modificar-los-datos"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ para más información.
+\end_layout
+
+\begin_layout Subsection
+Plantaciones
+\end_layout
+
+\begin_layout Standard
+Esta sección solo es accesible con permisos de administrador.
+ Desde la página de inicio haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Plantaciones
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename plantaciones_admin.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Página de plantaciones
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Dar de alta una nueva plantación
+\end_layout
+
+\begin_layout Standard
+Para dar de alta a un nueva plantación en el sistema, haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Nueva plantación
+\begin_inset Quotes frd
+\end_inset
+
+ y abrirá un formulario como el siguiente:
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename plantaciones_modificar.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nueva plantación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El año se rellena como un valor númerico.
+ Tanto la zona como el identificar de usuario son desplegables.
+ La zona puede tener los siguientes valores:
+\end_layout
+
+\begin_layout Itemize
+UT1
+\end_layout
+
+\begin_layout Itemize
+UT2
+\end_layout
+
+\begin_layout Itemize
+UT3
+\end_layout
+
+\begin_layout Standard
+Mientras que los identificadores de usuario habrá tantos como socios dados
+ de alta en la base de datos hubiera.
+\end_layout
+
+\begin_layout Subsubsection
+Listar todas las plantaciones actuales
+\end_layout
+
+\begin_layout Standard
+Desde la página de 
+\begin_inset Quotes fld
+\end_inset
+
+Plantaciones
+\begin_inset Quotes frd
+\end_inset
+
+ haga click en 
+\begin_inset Quotes fld
+\end_inset
+
+Ver todas
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Las plantaciones son mostradas a 15 unidades por página, ordenadas por
+ número de identificador en sentido ascendente.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename plantaciones_listado.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Listado de páginas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Dar de baja una plantación
+\end_layout
+
+\begin_layout Standard
+Dentro de la sección 
+\begin_inset Quotes fld
+\end_inset
+
+Ver todas
+\begin_inset Quotes frd
+\end_inset
+
+ de 
+\begin_inset Quotes fld
+\end_inset
+
+Plantaciones
+\begin_inset Quotes frd
+\end_inset
+
+, al hacer click en el botón 
+\begin_inset Quotes fld
+\end_inset
+
+Borrar
+\begin_inset Quotes frd
+\end_inset
+
+ eliminará el registro deseado.
+ (Nota: El registro seguirá almacenado en la base de datos, pero su visibilidad
+ en la aplicación ha sido cambiada a oculto, en caso de querer recuperarlo
+ desde un sistema de gestión de bases de datos se puede realizar.)
+\end_layout
+
+\begin_layout Subsubsection
+Modificar los datos de una plantacion
+\end_layout
+
+\begin_layout Standard
+Dentro de la sección 
+\begin_inset Quotes fld
+\end_inset
+
+Ver todas
+\begin_inset Quotes frd
+\end_inset
+
+ de 
+\begin_inset Quotes fld
+\end_inset
+
+Plantaciones
+\begin_inset Quotes frd
+\end_inset
+
+, al hacer click en el botón 
+\begin_inset Quotes fld
+\end_inset
+
+Modificar
+\begin_inset Quotes frd
+\end_inset
+
+ será redirigido a un formulario con los valores actuales de la plantación.
+ Modifíquelos y pulse el botón 
+\begin_inset Quotes fld
+\end_inset
+
+Guardar nuevos valores
+\begin_inset Quotes frd
+\end_inset
+
+ para que los cambios se hagan efectivos.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename socios_modificar.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modificar usuario
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tras la modificación será redirigido al listado de plantaciones.
+\end_layout
+
+\begin_layout Subsection
+Cerrar sesión
+\end_layout
+
+\begin_layout Standard
+Haciendo click en el botón 
+\begin_inset Quotes fld
+\end_inset
+
+Salir
+\begin_inset Quotes frd
+\end_inset
+
+ en la esquina superior derecha podrá cerrar sesión.
+ Será redirigido a la página de acceso.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename volver_inicio.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Menú superior
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Manual de estilos
+\end_layout
+
+\begin_layout Section
+Criterios de accesibilidad
+\end_layout
+
+\begin_layout Standard
+Se han seguido los siguientes:
+\end_layout
+
+\begin_layout Subsection
+Formularios:
+\end_layout
+
+\begin_layout Itemize
+Etiquetados con label.
+\end_layout
+
+\begin_layout Itemize
+Accesibles mediante teclado.
+\end_layout
+
+\begin_layout Subsection
+Legibilidad e inteligibilidad sin CSS
+\end_layout
+
+\begin_layout Standard
+Se han deshabilitado las hojas de estilos mediante las herramientas de desarroll
+ador con las que cuentan los navegadores web y se ha comprobado como es
+ la legibilidad e inteligibilidad de la web.
+ Los resultados obtenidos son los siguientes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename login_sin_css.png
+	lyxscale 65
+	scale 65
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Login sin CSS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename pagina_inicio_sin_css.png
+	lyxscale 65
+	scale 65
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Página de inicio sin CSS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename listado_entregas_sin_css.png
+	lyxscale 65
+	scale 65
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Listado entregas sin CSS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename alta_entrega_sin_css.png
+	lyxscale 65
+	scale 65
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Formulario alta entrega sin CSS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Análisis del contraste de colores
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename contraste_colores.png
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Contraste de colores
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Texto alternativo imágenes
+\end_layout
+
+\begin_layout Standard
+Fijado para la única imágen de la web, el logotipo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename img_tag.png
+	lyxscale 55
+	scale 55
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+etiqueta img
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Criterios de usabilidad
+\end_layout
+
+\begin_layout Standard
+Durante el desarrollo de la aplicación web se han seguido los siguientes:
+\end_layout
+
+\begin_layout Itemize
+Posibilidad volver a la página inicio en todo momento.
+\end_layout
+
+\begin_layout Itemize
+Sistema de navegación intuitivo.
+\end_layout
+
+\begin_layout Itemize
+Iconos comprensibles, mismo diseño, misma ubicación.
+\end_layout
+
+\begin_layout Itemize
+Claridad mensajes error.
+\end_layout
+
+\begin_layout Itemize
+Uso de 
+\begin_inset Quotes fld
+\end_inset
+
+migas de pan
+\begin_inset Quotes frd
+\end_inset
+
+ o 
+\emph on
+breadcrumbs
+\emph default
+.
+\end_layout
+
+\begin_layout Itemize
+La página se visualiza correctamente en diferentes resoluciones.
+\end_layout
+
+\begin_layout Itemize
+Se aprovecha equilibradamente el espacio visual de la página para evitar
+ la sobresaturación de elementos, con espacios en blanco (libres) entre
+ el contenido, para descansar la vista.
+\end_layout
+
+\begin_layout Itemize
+Tiempo de descarga adecuado.
+\end_layout
+
+\begin_layout Itemize
+El rotulado es significativo, correcto y utiliza lemas estándares: "Mapa
+ del sitio", "Acerca de", "Quiénes somos", "Ayuda", "FAQs", "Regístrese".
+\end_layout
+
+\begin_layout Itemize
+Independencia del navegador y su versión.
+\end_layout
+
+\begin_layout Itemize
+Título descriptivo de la página.
+\end_layout
+
+\begin_layout Itemize
+Uso adecuado del texto: fuente, tamaño adaptable a todos los dispositivos,
+ contraste, ...
+\end_layout
+
+\begin_layout Section
+Fuentes
+\end_layout
+
+\begin_layout Standard
+En caso de que no se especifique alguna característica, su valor depende
+ de su contenedor padre (generalmente fijado en la hoja de estilos bootstrap.css)
+ o de los valores por defecto fijados por el navegador web.
+\end_layout
+
+\begin_layout Subsection
+Cuerpo
+\end_layout
+
+\begin_layout Standard
+Por orden de aparición, se van usando en caso de ausencia las siguientes:
+\end_layout
+
+\begin_layout Itemize
+Familia de fuentes: system-ui, -apple-system, Segoe UI, Roboto, Helvetica
+ Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji,
+ Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji.
+\end_layout
+
+\begin_layout Standard
+Características:
+\end_layout
+
+\begin_layout Itemize
+Tamaño: 1 rem
+\end_layout
+
+\begin_layout Itemize
+Peso: 400
+\end_layout
+
+\begin_layout Itemize
+Color: #212529
+\end_layout
+
+\begin_layout Subsubsection
+Titulares
+\end_layout
+
+\begin_layout Paragraph
+h1
+\end_layout
+
+\begin_layout Itemize
+Peso: 500
+\end_layout
+
+\begin_layout Itemize
+Tamaño: 1.325 rem + 0.9 * ancho_dispositivo
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Dispositivos con ancho mayor a 1200 px:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Tamaño: 2.5 rem
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsubsection
+Navbar text
+\end_layout
+
+\begin_layout Itemize
+Tamaño: large
+\end_layout
+
+\begin_layout Subsubsection
+Enlaces
+\end_layout
+
+\begin_layout Itemize
+Color: #198754
+\end_layout
+
+\begin_layout Paragraph
+clase page link
+\end_layout
+
+\begin_layout Itemize
+Color: #fff
+\end_layout
+
+\begin_layout Subsubsection
+Botones
+\end_layout
+
+\begin_layout Itemize
+Color: #fff
+\end_layout
+
+\begin_layout Section
+Mapa de colores
+\end_layout
+
+\begin_layout Standard
+Los colores utilizados han sido los siguientes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<row topspace="default" bottomspace="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RGB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(0, 0, 0)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(33,37,41)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(25,135,84)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(158, 185, 69)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(255, 255, 255)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topspace="default" bottomspace="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hexadecimal
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+#000000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+#212529
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+#198754
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+#9eb945
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+#ffffff
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topspace="default" bottomspace="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Color
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename #000000.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename #212529.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename #198754.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename #9eb945.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename #ffffff.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mapa de colores
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Dispositivos/vistas
+\end_layout
+
+\begin_layout Subsection
+Puntos de ruptura
+\end_layout
+
+\begin_layout Standard
+Bootstrap por defecto cuenta con los siguientes puntos de ruptura:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Punto de ruptura
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dimensiones (píxeles)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X-Small
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $<576$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Small
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\geq576$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\geq768$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Large
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\geq992$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Extra large
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\geq1200$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Extra extra large
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\geq1400$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Puntos de ruptura
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Ejemplos
+\end_layout
+
+\begin_layout Standard
+Las capturas se muestran a escala 2:5 de cara a poder visualizar los tamaños
+ más grandes.
+ Se muestra el login y una página de listados.
+\end_layout
+
+\begin_layout Subsubsection
+X-Small
+\end_layout
+
+\begin_layout Standard
+Capturas tomadas a 575 x 652 píxeles
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename login_x_small.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Login
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename listado_x_small.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Listado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Small
+\end_layout
+
+\begin_layout Standard
+Capturas tomadas a 767 x 652 píxeles
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename login_small.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Login
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename listado_small.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Listado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Medium
+\end_layout
+
+\begin_layout Standard
+Capturas tomadas a 991 x 652 píxeles
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename login_medium.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Login
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename listado_medium.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Listado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Large
+\end_layout
+
+\begin_layout Standard
+Capturas tomadas a 1199 x 652 píxeles
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename login_large.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Login
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename listado_large.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Listado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Extra large
+\end_layout
+
+\begin_layout Standard
+Capturas tomadas a 1399 x 652 píxeles
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename login_extra_large.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Login
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename listado_extra_large.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Listado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Extra extra large
+\end_layout
+
+\begin_layout Standard
+Capturas tomadas a 1401 x 652 píxeles
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename login_extra_extra_large.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Login
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename listado_extra_extra_large.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Listado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Guía de instalación
+\end_layout
+
+\begin_layout Standard
+Para realizar el despliegue se ha optado por un servicio de hosting gratuito
+ (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://es.000webhost.com/
+\end_layout
+
+\end_inset
+
+) para comprobar el correcto funcionamiento de la aplicación web.
+\end_layout
+
+\begin_layout Itemize
+URL del proyecto en producción: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://cosafra.000webhostapp.com/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Primeros pasos
+\end_layout
+
+\begin_layout Standard
+Tras registrarnos en el portal web y verificar nuestra dirección de correo
+ electrónico, hacemos click en 
+\begin_inset Quotes fld
+\end_inset
+
+Other
+\begin_inset Quotes frd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting1.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pantalla de inicio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Escribimos un nombre para nuestro proyecto y una contraseña:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting2.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pantalla de inicio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por último elegimos como vamos a crear el proyecto (
+\begin_inset Quotes fld
+\end_inset
+
+Upload your site
+\begin_inset Quotes frd
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting3.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pantalla de inicio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Subida de ficheros al servidor
+\end_layout
+
+\begin_layout Standard
+Acto seguido seremos redirigidos al gestor de ficheros del servicio:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting4.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gestor de ficheros
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En 
+\begin_inset Quotes fld
+\end_inset
+
+public_html
+\begin_inset Quotes frd
+\end_inset
+
+ subiremos todos los ficheros estrictamentemente necesarios para el funcionamien
+to de la aplicación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting5.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ficheros de la aplicación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Creando la base de datos
+\end_layout
+
+\begin_layout Standard
+Desde el panel de configuación del sitio hacemos click en 
+\begin_inset Quotes fld
+\end_inset
+
+Tools
+\begin_inset Quotes frd
+\end_inset
+
+ y en 
+\begin_inset Quotes fld
+\end_inset
+
+Database Manager
+\begin_inset Quotes frd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting10.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Database Manager
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hacemos click en 
+\begin_inset Quotes fld
+\end_inset
+
++ New Database
+\begin_inset Quotes frd
+\end_inset
+
+ abriendo el siguiente formulario:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting11.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Database Manager
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez creada, la vista del Database Manager tornará a la siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting12.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Database Manager
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si hacemos click en 
+\begin_inset Quotes fld
+\end_inset
+
+Manage
+\begin_inset Quotes frd
+\end_inset
+
+ se abrirá un desplegable con las siguientes opciones:
+\end_layout
+
+\begin_layout Enumerate
+PhpMyAdmin
+\end_layout
+
+\begin_layout Enumerate
+Change Password
+\end_layout
+
+\begin_layout Enumerate
+Delete DB
+\end_layout
+
+\begin_layout Standard
+Elegimos PhpMyAdmin y en una nueva pestaña se abrirá.
+ Seleccionamos nuestra base de datos y ejecutamos en la pestaña 
+\begin_inset Quotes fld
+\end_inset
+
+SQL
+\begin_inset Quotes frd
+\end_inset
+
+ el contenido del script 
+\begin_inset Quotes fld
+\end_inset
+
+database/database.sql
+\begin_inset Quotes frd
+\end_inset
+
+ (ver subsección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:database"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting13.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Creación de las tablas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Después, ejecutamos el contenido de 
+\begin_inset Quotes fld
+\end_inset
+
+database/inserts.sql
+\begin_inset Quotes frd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting14.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Datos mínimos para usar la base de datos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Configurando el servidor
+\end_layout
+
+\begin_layout Subsection
+Cambiar la versión de PHP
+\end_layout
+
+\begin_layout Standard
+Dentro del panel de configuración del sitio, hacemos click en 
+\begin_inset Quotes fld
+\end_inset
+
+Website settings
+\begin_inset Quotes frd
+\end_inset
+
+ y en 
+\begin_inset Quotes fld
+\end_inset
+
+General
+\begin_inset Quotes frd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting8.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Panel de configuración
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y seleccionamos la versión 8.0:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting9.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Seleccionando la versión de PHP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Fichero .htaccess
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting6.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Contenido original .htaccess
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los pasos a seguir son:
+\end_layout
+
+\begin_layout Itemize
+Borrar el contenido de la línea 3
+\end_layout
+
+\begin_layout Itemize
+Añadir las líneas siguientes:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+php_flag session.auto_start on (Corrige error detectado: Pérdida de los datos
+ de la variable de sesión)
+\end_layout
+
+\begin_layout Enumerate
+php_flag output_buffering on (Corrige error detectado: No funciona la función
+ del sistema header() )
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting7.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Contenido modificado .htaccess
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Ficheros de parámetros
+\end_layout
+
+\begin_layout Standard
+Cambiaremos los valores de los parámetros a los necesarios para la puesta
+ en producción:
+\end_layout
+
+\begin_layout Subsubsection
+config.php
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting15.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Valores usados en desarrollo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting16.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Valores usados en producción
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+parameters.php
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting17.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Valores usados en desarrollo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting18.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Valores usados en producción
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ya está todo listo, si accedemos a la URL del sitio podemos iniciar sesión
+ con las credenciales introducidas en la base de datos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting19.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Inicio de sesión
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting20.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Página de inicio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Software utilizado
+\end_layout
+
+\begin_layout Standard
+Para la implementación de la aplicación han sido necesarios los siguientes
+ paquetes de software:
+\end_layout
+
+\begin_layout Itemize
+XAMPP: Paquete de software libre consistente en el sistema de bases de datos
+ MariaDB, el servidor web Apache y el intérprete de PHP.
+ Permite de forma fácil y rápida poder configurar un servidor web para el
+ desarrollo de aplicaciones.
+ También incluye otros módulos útiles como phpMyAdmin que ha sido usado
+ como herramienta de administración de MariaDB.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.apachefriends.org/es/index.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Visual Studio Code: Editor de código fuente multiplataforma desarrollado
+ por Microsoft.
+ Usado para la escritura del código fuente.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://code.visualstudio.com/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Git: Software de control de versiones.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://git-scm.com/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+GitHub: Plataforma de desarrollo colaborativo para alojar proyectos utilizando
+ Git.
+ Se ha utilizado para alojar el proyecto en la nube como copia de seguridad.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Navegadores web: Firefox y Google Chrome.
+ Usados para el desarrollo de la aplicación y la lectura de archivos PDF.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.mozilla.org/es-ES/firefox/new/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.google.com/intl/es_es/chrome/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Enterprise Architect: Herramienta de diseño y modelado visual basada en
+ UML.
+ Ha sido utilizada durante la fase de diseño para la confección de los diagramas
+ de casos de uso y relacionales.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://sparxsystems.com/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Dia: Herramienta de dibujo para la creación de diagramas.
+ Usada para representar diversos diagramas de la memoria.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://dia-installer.de/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\SpecialChar LyX
+ y MiKteX: \SpecialChar LyX
+ es un procesador de texto cuyo objetivo es hacer más sencillo
+ el uso de \SpecialChar TeX
+ mediante una interfaz gráfica.
+ Para poder usarlo es necesario tener instalado en el sistema una distribución
+ de \SpecialChar TeX
+ como es MiKteX.
+ Ambos han sido utilizados para la redacción de esta memoria.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.lyx.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://miktex.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Microsoft Paint: Edicición de imágenes (recorte y redimensión).
+\end_layout
+
+\begin_layout Part
+Mejoras posibles y aportaciones
+\end_layout
+
+\begin_layout Section
+Técnicas
+\end_layout
+
+\begin_layout Itemize
+Sí la aplicación fuera capaz de detectar que la báscula se encuentra físicamente
+ conectada al dispositivo, podría rellenar automáticamente el peso bruto
+ de la entrega.
+ 
+\end_layout
+
+\begin_layout Itemize
+En caso de mejora de las prestaciones de los equipos informáticos, se podría
+ optar por desacoplar el frontend con el backend:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Frontend: Solicitud de datos al servidor mediante peticiones AJAX y manipulación
+ del DOM.
+\end_layout
+
+\begin_layout Itemize
+Backend: Control de sesiones, gestión del CRUD y envío de correo.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Sería muy interesante implementar distintos filtros de cara a la visualización
+ de datos:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Número de registros por página.
+\end_layout
+
+\begin_layout Itemize
+Filtrado de entrega por mes y año.
+\end_layout
+
+\begin_layout Itemize
+Mostrar usuarios por rol.
+\end_layout
+
+\begin_layout Itemize
+Barra de búsqueda de usuarios por apellidos.
+\end_layout
+
+\begin_layout Itemize
+Mostrar entregas agrupadas por zona de procedencia.
+\end_layout
+
+\begin_layout Itemize
+Ordenar los registros por orden ascendente o descendente por campos.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Enviar un fichero pdf adjunto al correo electrónico con los datos de la
+ entrega.
+\end_layout
+
+\begin_layout Itemize
+Uso de funciones de realimentación al usuario.
+\end_layout
+
+\begin_layout Itemize
+Realización de test unitarios.
+\end_layout
+
+\begin_layout Section
+Alcance
+\end_layout
+
+\begin_layout Standard
+Éste podría ser superior añadiendo una funcionalidad de clasificado de espárrago
+s: 
+\end_layout
+
+\begin_layout Standard
+De cada entrega de espárragos se toma una muestra aleatoria a la que se
+ le realizará un análisis (escandallo).
+ En el escandallo se determina el calibre (grosor) de los espárragos entregados
+ en tres categorías distintas: 8-12 mm (fino), 12-16 mm (medio) y 16 mm
+ en adelante (gordo).
+ De cada categoría obtendremos un tanto por ciento que se aplicará a la
+ cosecha entregada el día del análisis (identificado por su código de entrega).
+ En el escandallo también se determina el tanto por ciento de espárragos
+ no aptos para la venta.
+ A este porcentaje se le llama destrio.
+\end_layout
+
+\begin_layout Standard
+Una vez sabido el tanto por ciento de espárragos de cada calibre y el destrio
+ este porcentaje se aplica a los kilos cosechados en la entrega y se guarda
+ en el sistema.
+\end_layout
+
+\begin_layout Standard
+Sería necesario crear un CRUD para el escandallo y fijar por roles los criterios
+ de acceso a cada una de las funcionalidades:
+\end_layout
+
+\begin_layout Itemize
+Administrador: Acceso al CRUD.
+\end_layout
+
+\begin_layout Itemize
+Socio: Acceso a lectura.
+\end_layout
+
+\begin_layout Itemize
+Pesador: Sin permisos, ya que no es su ámbito de trabajo.
+\end_layout
+
+\begin_layout Itemize
+Analista: Nuevo rol creado con acceso al CRUD.
+\end_layout
+
+\begin_layout Standard
+En la base de datos crearíamos una nueva tabla llamada escandallo con una
+ relación 0 a 1 con entrega con los siguientes campos:
+\end_layout
+
+\begin_layout Itemize
+id_escandallo (entero autoincrementado, clave primaria).
+\end_layout
+
+\begin_layout Itemize
+porcentaje_fino (real)
+\end_layout
+
+\begin_layout Itemize
+porcentaje_medio (real)
+\end_layout
+
+\begin_layout Itemize
+porcentaje_gordo (real)
+\end_layout
+
+\begin_layout Itemize
+porcentaje_destrio (real)
+\end_layout
+
+\begin_layout Itemize
+fino (real, campo calculado).
+\end_layout
+
+\begin_layout Itemize
+medio (real, campo calculado).
+\end_layout
+
+\begin_layout Itemize
+gordo (real, campo calculado).
+\end_layout
+
+\begin_layout Itemize
+destrio (real, campo calculado).
+\end_layout
+
+\begin_layout Itemize
+id_entrega (entero, clave ajena).
+\end_layout
+
+\end_body
+\end_document

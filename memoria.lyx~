@@ -280,7 +280,7 @@ Competencias digitales reducidas: Los socios de la cooperativa, en buena
 \begin_deeper
 \begin_layout Enumerate
 Impartiendo formación por parte de los empleados de la oficina de COSAFRA
- para enseñar a los socios el funcionamiento del portal web.
+ a los socios sobre funcionamiento del portal web.
 \end_layout
 
 \begin_layout Enumerate
@@ -294,16 +294,17 @@ i, con los beneficios para el buen funcionamiento de la báscula que esto
 
 \end_deeper
 \begin_layout Itemize
-Idoneidad de la inversión: La cooperativa en este momento cuenta con problemas
- más importantes que la digitalización total de la báscula.
+Idoneidad de la inversión: Como hijo de un socio me atrevería a afirmar
+ que la cooperativa en estos momentos cuenta con problemas más importantes
+ que la total digitalización de la báscula.
  Sería cuestión de que los socios discutiesen sobre si es una inversión
  necesaria o si es preferible orientar esos fondos en otra dirección más
  provechosa.
 \end_layout
 
 \begin_layout Itemize
-Alcance de la aplicación: Ya puestos a invertir en digitalización, digitalicemos
- la cadena de producción al completo.
+Alcance de la aplicación: Puestos a invertir en digitalización, hagámoslo
+ con la cadena de producción al completo.
  Para ello, más que una aplicación web como 
 \begin_inset Quotes fld
 \end_inset
@@ -312,15 +313,16 @@ parche
 \begin_inset Quotes frd
 \end_inset
 
- a un problema concreto, que es lo que propongo en este memoria, yo aconsejería
+ a un problema concreto, que es lo que propongo en este memoria, yo aconsejaría
  a la cooperativa trasladar su problema a una consultoría y estudiar su
  caso con detalle.
  Probablemente los productos más adecuado para sus necesidades serían un
  sistema ERP o algún otro tipo de software de gestión.
- Esto sería muy interesante de cara a automatizar el proceso de las liquidacione
-s económica trimestrales, que llevan un aproximadamente un mes para realizarlas
- con el coste asociado de cinco trabajadores en la oficina realizando cálculos
- tediosos, imprimiendo y revisando cientos de facturas y albaranes.
+ Esto sería muy interesante de cara a llegar a automatizar el proceso de
+ ejecución de las liquidaciones económica trimestrales, que llevan un aproximada
+mente un mes para realizarlas con el coste asociado de cinco trabajadores
+ en la oficina realizando cálculos tediosos, imprimiendo y revisando cientos
+ de facturas y albaranes.
 \end_layout
 
 \begin_layout Standard
@@ -556,12 +558,52 @@ En el cliente
 \end_layout
 
 \begin_layout Itemize
-Requisitos mínimos de software y hardware necesarios para poder correr un
- navegador web actualizado.
+Contar con conexión a Internet para acceder a la web.
+\end_layout
+
+\begin_layout Standard
+Para poder visualizar correctamente la página web es necesario poder usar
+ las hojas de estilo de Bootstrap cuyos requisitos mínimos son:
 \end_layout
 
 \begin_layout Itemize
-Conexión a Internet.
+Google Chrome 
+\begin_inset Formula $>=$
+\end_inset
+
+ 60
+\end_layout
+
+\begin_layout Itemize
+Firefox 
+\begin_inset Formula $>=$
+\end_inset
+
+ 60
+\end_layout
+
+\begin_layout Itemize
+Firefox ESR
+\end_layout
+
+\begin_layout Itemize
+iOS 
+\begin_inset Formula $>=$
+\end_inset
+
+ 12
+\end_layout
+
+\begin_layout Itemize
+Safari 
+\begin_inset Formula $>=$
+\end_inset
+
+ 12
+\end_layout
+
+\begin_layout Itemize
+Internet Explorer no está soportado.
 \end_layout
 
 \begin_layout Section
@@ -576,23 +618,38 @@ Tener instalada la pila XAMP y capacidad de procesado suficiente para atender
 \begin_deeper
 \begin_layout Itemize
 X: Windows, Linux, Mac OS X ...
+ (Por ahorro de costes se recomiendan Debian, Ubuntu Server u Oracle Linux)
 \end_layout
 
 \begin_layout Itemize
-A: Apache.
+A: Apache 
 \end_layout
 
 \begin_layout Itemize
-M: MySQL/MariaDB.
+M: MariaDB 
 \end_layout
 
 \begin_layout Itemize
-P: PHP.
+P: PHP 
+\begin_inset Formula $>=$
+\end_inset
+
+ 8.0.19
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
+Composer (gestor de dependencias de PHP).
+\end_layout
+
+\begin_layout Itemize
 Conexión a Internet.
+\end_layout
+
+\begin_layout Standard
+También se puede optar por un servicio de hosting en la nube y calcular
+ los costes asociados que puede tener la página.
+ Dependiendo del proveedor las tarifas pueden variar.
 \end_layout
 
 \begin_layout Part
@@ -660,8 +717,8 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename dia_casos_uso.png
-	lyxscale 80
-	scale 80
+	lyxscale 70
+	scale 70
 
 \end_inset
 
@@ -700,9 +757,9 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename dia_clases.png
-	lyxscale 85
-	scale 85
+	filename dia_clases_horizontal-1.png
+	lyxscale 70
+	scale 70
 
 \end_inset
 
@@ -749,8 +806,8 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename diar_er_cooperativa.png
-	lyxscale 65
-	scale 65
+	lyxscale 40
+	scale 40
 
 \end_inset
 
@@ -4109,6 +4166,24 @@ De esta forma he intentado crear un sistema de plantillas que he ido usando
 \end_layout
 
 \begin_layout Part
+Evaluación y prueba
+\end_layout
+
+\begin_layout Standard
+Se han realizado pruebas a todas las funcionalidades del CRUD para cada
+ una de las clases que disponemos, intentado introducir valores erróneos,
+ dejar campos sin rellenar ...
+ 
+\end_layout
+
+\begin_layout Standard
+A la hora de crear los formularios se han construido con la intención de
+ que el usuario tenga que introducir el mínimo número de valores posibles
+ usando inputs de tipo desplegable u ocultando a la vista los valores enviados
+ en el formulario.
+\end_layout
+
+\begin_layout Part
 Manual de usuario
 \end_layout
 
@@ -6005,7 +6080,7 @@ Nueva plantación
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -6084,7 +6159,7 @@ Ver todas
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -6190,7 +6265,7 @@ Guardar nuevos valores
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -6285,11 +6360,11 @@ Se han seguido los siguientes:
 \end_layout
 
 \begin_layout Subsection
-Formularios:
+Formularios
 \end_layout
 
 \begin_layout Itemize
-Etiquetados con < label > .
+Etiquetados con label.
 \end_layout
 
 \begin_layout Itemize
@@ -6312,7 +6387,7 @@ ador con las que cuentan los navegadores web y se ha comprobado como es
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align left
@@ -6345,7 +6420,7 @@ Login sin CSS
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align left
@@ -6378,7 +6453,7 @@ Página de inicio sin CSS
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align left
@@ -6411,7 +6486,7 @@ Listado entregas sin CSS
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align left
@@ -6448,7 +6523,7 @@ Análisis del contraste de colores
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align left
@@ -6495,8 +6570,8 @@ status open
 \align left
 \begin_inset Graphics
 	filename img_tag.png
-	lyxscale 70
-	scale 70
+	lyxscale 55
+	scale 55
 
 \end_inset
 
@@ -6678,7 +6753,7 @@ clase page link
 \end_layout
 
 \begin_layout Itemize
-Color: #fff
+Color: #ffffff
 \end_layout
 
 \begin_layout Subsubsection
@@ -6686,7 +6761,7 @@ Botones
 \end_layout
 
 \begin_layout Itemize
-Color: #fff
+Color: #ffffff
 \end_layout
 
 \begin_layout Section
@@ -6702,13 +6777,14 @@ Los colores utilizados han sido los siguientes:
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="5">
+<lyxtabular version="3" rows="3" columns="6">
 <features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0pt">
@@ -6720,6 +6796,15 @@ status collapsed
 
 \begin_layout Plain Layout
 RGB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(0, 0, 0)
 \end_layout
 
 \end_inset
@@ -6775,6 +6860,15 @@ Hexadecimal
 \begin_inset Text
 
 \begin_layout Plain Layout
+#000000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 #212529
 \end_layout
 
@@ -6814,6 +6908,22 @@ Hexadecimal
 
 \begin_layout Plain Layout
 Color
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename #000000.png
+	lyxscale 62
+	scale 62
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -7131,7 +7241,7 @@ X-Small
 \end_layout
 
 \begin_layout Standard
-Capturas tomadas a 575 x 652 píxeles
+Capturas tomadas a 575 x 652 píxeles.
 \end_layout
 
 \begin_layout Standard
@@ -7209,7 +7319,7 @@ Small
 \end_layout
 
 \begin_layout Standard
-Capturas tomadas a 767 x 652 píxeles
+Capturas tomadas a 767 x 652 píxeles.
 \end_layout
 
 \begin_layout Standard
@@ -7283,7 +7393,7 @@ Medium
 \end_layout
 
 \begin_layout Standard
-Capturas tomadas a 991 x 652 píxeles
+Capturas tomadas a 991 x 652 píxeles.
 \end_layout
 
 \begin_layout Standard
@@ -7357,7 +7467,7 @@ Large
 \end_layout
 
 \begin_layout Standard
-Capturas tomadas a 1199 x 652 píxeles
+Capturas tomadas a 1199 x 652 píxeles.
 \end_layout
 
 \begin_layout Standard
@@ -7431,7 +7541,7 @@ Extra large
 \end_layout
 
 \begin_layout Standard
-Capturas tomadas a 1399 x 652 píxeles
+Capturas tomadas a 1399 x 652 píxeles.
 \end_layout
 
 \begin_layout Standard
@@ -7505,7 +7615,7 @@ Extra extra large
 \end_layout
 
 \begin_layout Standard
-Capturas tomadas a 1401 x 652 píxeles
+Capturas tomadas a 1401 x 652 píxeles.
 \end_layout
 
 \begin_layout Standard
@@ -7594,13 +7704,28 @@ https://es.000webhost.com/
 ) para comprobar el correcto funcionamiento de la aplicación web.
 \end_layout
 
+\begin_layout Itemize
+URL del proyecto en producción: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://cosafra.000webhostapp.com/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Primeros pasos
 \end_layout
 
 \begin_layout Standard
-Tras registrarnos en el portal web y verificar nuestra dirección dirección
- de correo electrónico, hacemos click en 
+Tras registrarnos en el portal web y verificar nuestra dirección de correo
+ electrónico, hacemos click en 
 \begin_inset Quotes fld
 \end_inset
 
@@ -7826,7 +7951,7 @@ Tools
 \begin_inset Quotes frd
 \end_inset
 
-y en 
+ y en 
 \begin_inset Quotes fld
 \end_inset
 
@@ -7871,7 +7996,7 @@ Database Manager
 \end_layout
 
 \begin_layout Standard
-Y hacemos click en 
+Hacemos click en 
 \begin_inset Quotes fld
 \end_inset
 
@@ -7916,7 +8041,7 @@ Database Manager
 \end_layout
 
 \begin_layout Standard
-Una vez creada la vista del Database Manager tornará a la siguiente:
+Una vez creada, la vista del Database Manager tornará a la siguiente:
 \end_layout
 
 \begin_layout Standard
@@ -7961,19 +8086,19 @@ Manage
 \begin_inset Quotes frd
 \end_inset
 
- se abrirá un desplegable con las opciones:
+ se abrirá un desplegable con las siguientes opciones:
 \end_layout
 
 \begin_layout Enumerate
-PhpMyAdmin
+PhpMyAdmin.
 \end_layout
 
 \begin_layout Enumerate
-Change Password
+Change Password.
 \end_layout
 
 \begin_layout Enumerate
-Delete DB
+Delete DB.
 \end_layout
 
 \begin_layout Standard
@@ -8018,8 +8143,8 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename hosting13.png
-	lyxscale 60
-	scale 60
+	lyxscale 65
+	scale 65
 
 \end_inset
 
@@ -8063,8 +8188,8 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename hosting14.png
-	lyxscale 60
-	scale 60
+	lyxscale 65
+	scale 65
 
 \end_inset
 
@@ -8124,8 +8249,8 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename hosting8.png
-	lyxscale 40
-	scale 40
+	lyxscale 55
+	scale 55
 
 \end_inset
 
@@ -8161,8 +8286,8 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename hosting9.png
-	lyxscale 40
-	scale 40
+	lyxscale 45
+	scale 45
 
 \end_inset
 
@@ -8225,7 +8350,7 @@ Los pasos a seguir son:
 \end_layout
 
 \begin_layout Itemize
-Borrar el contenido de la línea 3
+Borrar el contenido de la línea 3.
 \end_layout
 
 \begin_layout Itemize
@@ -8427,8 +8552,8 @@ Valores usados en producción
 \end_layout
 
 \begin_layout Standard
-Y ya está todo listo, si accedemos a la url del sitio podemos iniciar sesión
- con las credenciales introducidas en la base de datos
+Ya está todo listo, si accedemos a la URL del sitio podemos iniciar sesión
+ con las credenciales introducidas en la base de datos:
 \end_layout
 
 \begin_layout Standard
@@ -8442,8 +8567,8 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename hosting19.png
-	lyxscale 60
-	scale 60
+	lyxscale 45
+	scale 45
 
 \end_inset
 
@@ -8475,8 +8600,8 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename hosting20.png
-	lyxscale 60
-	scale 60
+	lyxscale 50
+	scale 50
 
 \end_inset
 
@@ -8597,7 +8722,7 @@ https://github.com/
 
 \end_deeper
 \begin_layout Itemize
-Navegadores web: Firefox y Google Chrome.
+Navegadores web: Firefox, Google Chrome, Edge.
  Usados para el desarrollo de la aplicación y la lectura de archivos PDF.
 \end_layout
 
@@ -8635,7 +8760,7 @@ https://www.google.com/intl/es_es/chrome/
 Enterprise Architect: Herramienta de diseño y modelado visual basada en
  UML.
  Ha sido utilizada durante la fase de diseño para la confección de los diagramas
- de casos de uso y relacionales.
+ de casos de uso y modelo-relacionales.
 \end_layout
 
 \begin_deeper
@@ -8656,7 +8781,7 @@ https://sparxsystems.com/
 \end_deeper
 \begin_layout Itemize
 Dia: Herramienta de dibujo para la creación de diagramas.
- Usada para representar el diagrama entidad-relación de la base de datos.
+ Usada para representar diversos diagramas de la memoria.
 \end_layout
 
 \begin_deeper
@@ -8788,6 +8913,14 @@ Enviar un fichero pdf adjunto al correo electrónico con los datos de la
  entrega.
 \end_layout
 
+\begin_layout Itemize
+Uso de funciones de realimentación al usuario.
+\end_layout
+
+\begin_layout Itemize
+Realización de test unitarios.
+\end_layout
+
 \begin_layout Section
 Alcance
 \end_layout
@@ -8847,19 +8980,35 @@ id_escandallo (entero autoincrementado, clave primaria).
 \end_layout
 
 \begin_layout Itemize
-fino (real).
+porcentaje_fino (real).
 \end_layout
 
 \begin_layout Itemize
-medio (real).
+porcentaje_medio (real).
 \end_layout
 
 \begin_layout Itemize
-gordo (real).
+porcentaje_gordo (real).
 \end_layout
 
 \begin_layout Itemize
-destrio (real).
+porcentaje_destrio (real).
+\end_layout
+
+\begin_layout Itemize
+fino (real, campo calculado).
+\end_layout
+
+\begin_layout Itemize
+medio (real, campo calculado).
+\end_layout
+
+\begin_layout Itemize
+gordo (real, campo calculado).
+\end_layout
+
+\begin_layout Itemize
+destrio (real, campo calculado).
 \end_layout
 
 \begin_layout Itemize
