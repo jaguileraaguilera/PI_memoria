@@ -1572,7 +1572,7 @@ EntregaRepository
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1770,6 +1770,39 @@ extraer_registro() : ?Usuario
 
 \begin_layout Itemize
 extraer_todos() : array
+\end_layout
+
+\begin_layout Itemize
+login(string $correo, string $password) : ?Usuario
+\end_layout
+
+\begin_layout Itemize
+listar() : array
+\end_layout
+
+\begin_layout Itemize
+borrar(int $id_usuario) : void
+\end_layout
+
+\begin_layout Itemize
+datos_usuario(int $id_usuario) : ?Usuario
+\end_layout
+
+\begin_layout Itemize
+datos_usuario_correo(string $correo) : ?Usuario
+\end_layout
+
+\begin_layout Itemize
+alta(array $campos_validados, string $correo, string $password, int $rol)
+ : void
+\end_layout
+
+\begin_layout Itemize
+modificar(int $id_usuario, array $parametros) : void
+\end_layout
+
+\begin_layout Itemize
+get_usuario_from_plantacion(int $id_plantacion) : ?Usuario
 \end_layout
 
 \begin_layout Section
@@ -2378,7 +2411,7 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="2">
+<lyxtabular version="3" rows="3" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -2403,7 +2436,7 @@ Fichero
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2412,12 +2445,31 @@ Función
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Permite realizar cambios en la configuración del sitio web
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Cambios en la configuración del sitio web sin editar la configuración del
- servidor
+sin editar la configuración del servidor
 \end_layout
 
 \end_inset
@@ -2736,7 +2788,7 @@ Contiene las imágenes usadas en el proyecto.
 \end_layout
 
 \begin_layout Subsection
-config
+config 
 \end_layout
 
 \begin_layout Standard
@@ -2780,7 +2832,7 @@ Config
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2858,7 +2910,7 @@ config.php
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -3208,7 +3260,14 @@ FrontController.php
 \end_layout
 
 \begin_layout Subsection
-database
+database 
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:database"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3874,8 +3933,8 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename estructura_fich_vendor.png
-	lyxscale 60
-	scale 60
+	lyxscale 75
+	scale 75
 
 \end_inset
 
@@ -3968,262 +4027,7 @@ breadcrumbs
 \begin_layout Standard
 De esta forma he intentado crear un sistema de plantillas que he ido usando
  para contruir las vistas.
- En las figuras siguientes se detalla el contenido de cada subdirectorio.
  Para mayor profundidad, mejor consultar el código fuente.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename estructura_fich_bc.png
-	lyxscale 60
-	scale 60
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\emph on
-breadcrumbs
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename estructura_fich_btn.png
-	lyxscale 60
-	scale 60
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-botones
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename estructura_fich_entrega.png
-	lyxscale 60
-	scale 60
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-entrega
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename estructura_fich_label.png
-	lyxscale 60
-	scale 60
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-label
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename estructura_fich_tables.png
-	lyxscale 60
-	scale 60
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-tables
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename estructura_fich_input.png
-	lyxscale 60
-	scale 60
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-input
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename estructura_fich_usuario.png
-	lyxscale 60
-	scale 60
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-usuario
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Part
@@ -7657,6 +7461,925 @@ Alta
 Guía de instalación
 \end_layout
 
+\begin_layout Standard
+Para realizar el despliegue se ha optado por un servicio de hosting gratuito
+ (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://es.000webhost.com/
+\end_layout
+
+\end_inset
+
+) para comprobar el correcto funcionamiento de la aplicación web.
+\end_layout
+
+\begin_layout Section
+Primeros pasos
+\end_layout
+
+\begin_layout Standard
+Tras registrarnos en el portal web y verificar nuestra dirección dirección
+ de correo electrónico, hacemos click en 
+\begin_inset Quotes fld
+\end_inset
+
+Other
+\begin_inset Quotes frd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting1.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pantalla de inicio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Escribimos un nombre para nuestro proyecto y una contraseña:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting2.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pantalla de inicio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por último elegimos como vamos a crear el proyecto (
+\begin_inset Quotes fld
+\end_inset
+
+Upload your site
+\begin_inset Quotes frd
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting3.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pantalla de inicio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Subida de ficheros al servidor
+\end_layout
+
+\begin_layout Standard
+Acto seguido seremos redirigidos al gestor de ficheros del servicio:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting4.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gestor de ficheros
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En 
+\begin_inset Quotes fld
+\end_inset
+
+public_html
+\begin_inset Quotes frd
+\end_inset
+
+ subiremos todos los ficheros estrictamentemente necesarios para el funcionamien
+to de la aplicación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting5.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ficheros de la aplicación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Creando la base de datos
+\end_layout
+
+\begin_layout Standard
+Desde el panel de configuación del sitio hacemos click en 
+\begin_inset Quotes fld
+\end_inset
+
+Tools
+\begin_inset Quotes frd
+\end_inset
+
+y en 
+\begin_inset Quotes fld
+\end_inset
+
+Database Manager
+\begin_inset Quotes frd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting10.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Database Manager
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y hacemos click en 
+\begin_inset Quotes fld
+\end_inset
+
++ New Database
+\begin_inset Quotes frd
+\end_inset
+
+ abriendo el siguiente formulario:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting11.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Database Manager
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez creada la vista del Database Manager tornará a la siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting12.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Database Manager
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si hacemos click en 
+\begin_inset Quotes fld
+\end_inset
+
+Manage
+\begin_inset Quotes frd
+\end_inset
+
+ se abrirá un desplegable con las opciones:
+\end_layout
+
+\begin_layout Enumerate
+PhpMyAdmin
+\end_layout
+
+\begin_layout Enumerate
+Change Password
+\end_layout
+
+\begin_layout Enumerate
+Delete DB
+\end_layout
+
+\begin_layout Standard
+Elegimos PhpMyAdmin y en una nueva pestaña se abrirá.
+ Seleccionamos nuestra base de datos y ejecutamos en la pestaña 
+\begin_inset Quotes fld
+\end_inset
+
+SQL
+\begin_inset Quotes frd
+\end_inset
+
+ el contenido del script 
+\begin_inset Quotes fld
+\end_inset
+
+database/database.sql
+\begin_inset Quotes frd
+\end_inset
+
+ (ver subsección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:database"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting13.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Creación de las tablas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Después, ejecutamos el contenido de 
+\begin_inset Quotes fld
+\end_inset
+
+database/inserts.sql
+\begin_inset Quotes frd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting14.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Datos mínimos para usar la base de datos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Configurando el servidor
+\end_layout
+
+\begin_layout Subsection
+Cambiar la versión de PHP
+\end_layout
+
+\begin_layout Standard
+Dentro del panel de configuración del sitio, hacemos click en 
+\begin_inset Quotes fld
+\end_inset
+
+Website settings
+\begin_inset Quotes frd
+\end_inset
+
+ y en 
+\begin_inset Quotes fld
+\end_inset
+
+General
+\begin_inset Quotes frd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting8.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Panel de configuración
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y seleccionamos la versión 8.0:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting9.png
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Seleccionando la versión de PHP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Fichero .htaccess
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting6.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Contenido original .htaccess
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los pasos a seguir son:
+\end_layout
+
+\begin_layout Itemize
+Borrar el contenido de la línea 3
+\end_layout
+
+\begin_layout Itemize
+Añadir las líneas siguientes:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+php_flag session.auto_start on (Corrige error detectado: Pérdida de los datos
+ de la variable de sesión)
+\end_layout
+
+\begin_layout Enumerate
+php_flag output_buffering on (Corrige error detectado: No funciona la función
+ del sistema header() )
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting7.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Contenido modificado .htaccess
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Ficheros config/config.php y config/parameters.php
+\end_layout
+
+\begin_layout Standard
+Cambiaremos los valores de los parámetros a los necesarios para la puesta
+ en producción:
+\end_layout
+
+\begin_layout Subsubsection
+config.php
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting15.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Valores usados en desarrollo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting16.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Valores usados en producción
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+parameters.php
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting17.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Valores usados en desarrollo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting18.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Valores usados en producción
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y ya está todo listo, si accedemos a la url del sitio podemos iniciar sesión
+ con las credenciales introducidas en la base de datos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting19.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Inicio de sesión
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hosting20.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Página de inicio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Part
 Software utilizado
 \end_layout
@@ -7794,8 +8517,8 @@ https://www.google.com/intl/es_es/chrome/
 \begin_layout Itemize
 Enterprise Architect: Herramienta de diseño y modelado visual basada en
  UML.
- Ha sido utilizada durante la fase de diseño para la confección de los casos
- de uso y los diagramas de casos de uso y relacionales.
+ Ha sido utilizada durante la fase de diseño para la confección de los diagramas
+ de casos de uso y relacionales.
 \end_layout
 
 \begin_deeper
