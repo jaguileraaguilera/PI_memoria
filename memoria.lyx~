@@ -313,7 +313,7 @@ parche
 \begin_inset Quotes frd
 \end_inset
 
- a un problema concreto, que es lo que propongo en este memoria, yo aconsejaría
+ a un problema concreto, que es lo que propongo en esta memoria, yo aconsejaría
  a la cooperativa trasladar su problema a una consultoría y estudiar su
  caso con detalle.
  Probablemente los productos más adecuado para sus necesidades serían un
@@ -6080,7 +6080,7 @@ Nueva plantación
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -6159,7 +6159,7 @@ Ver todas
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -6265,7 +6265,7 @@ Guardar nuevos valores
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -6387,7 +6387,7 @@ ador con las que cuentan los navegadores web y se ha comprobado como es
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align left
@@ -6420,7 +6420,7 @@ Login sin CSS
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align left
@@ -6453,7 +6453,7 @@ Página de inicio sin CSS
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align left
@@ -6486,7 +6486,7 @@ Listado entregas sin CSS
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align left
@@ -6523,7 +6523,7 @@ Análisis del contraste de colores
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align left
@@ -6564,7 +6564,7 @@ Fijado para la única imágen de la web, el logotipo:
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align left
@@ -6813,7 +6813,7 @@ RGB
 \begin_inset Text
 
 \begin_layout Plain Layout
-(33,37,41)
+(33, 37, 41)
 \end_layout
 
 \end_inset
@@ -6822,7 +6822,7 @@ RGB
 \begin_inset Text
 
 \begin_layout Plain Layout
-(25,135,84)
+(25, 135, 84)
 \end_layout
 
 \end_inset
