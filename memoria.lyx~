@@ -206,7 +206,7 @@ Enunciado del problema
 \end_layout
 
 \begin_layout Standard
-El siguiente desarrollo se ha realizado con el objectivo de informatizar
+El siguiente desarrollo se ha realizado con el objetivo de informatizar
  al completo las básculas de recepción de espárragos con las que cuenta
  COSAFRA SCA.
  
@@ -236,7 +236,7 @@ Se ha detectado que el programa actual con el que se realizan los pesos
 Se ejecuta en local.
  Debido a ello, al menor fallo en el dispositivo bien sea por problemas
  de rendimiento, fallos del sistema operativo u otros, la báscula queda
- inutilizada con todos los perjucios que esto supone.
+ inutilizada con todos los perjuicios que esto supone.
  Nuestro objetivo, al migrarla a una aplicación web, es añadir redundancia
  al sistema, permitiendo acceder al funcionamiento de la báscula desde cualquier
  dispositivo que cuente con un navegador web y acceso a Internet.
@@ -303,7 +303,7 @@ Idoneidad de la inversión: Como hijo de un socio me atrevería a afirmar
 \end_layout
 
 \begin_layout Itemize
-Alcance de la aplicación: Puestos a invertir en digitalización, hagámoslo
+Alcance de la aplicación: Puestos a invertir en digitalización, mejor hacerlo
  con la cadena de producción al completo.
  Para ello, más que una aplicación web como 
 \begin_inset Quotes fld
@@ -434,7 +434,7 @@ Ser de código abierto y multiplataforma: No es necesario pagar algún tipo
 \end_layout
 
 \begin_layout Itemize
-Se ejecuta en el servidor: Dados los límitados recursos informáticos con
+Se ejecuta en el servidor: Dados los limitados recursos informáticos con
  los que cuenta la cooperativa, para que no sea necesario la renovación
  de sus equipos informáticos se ha buscado que la aplicación web sea lo
  más ligera posible.
@@ -514,7 +514,7 @@ Reutilización de código: Bootstrap trae definida en su hoja de estilos una
 \begin_layout Itemize
 Personalización: Aquellas características de Bootstrap que no nos resulten
  adecuadas para el proyecto pueden ser modificadas a posteriori con una
- hojas de estilos propias que son ejecutadas sobreescribiendo el conjunto
+ hojas de estilos propias que son ejecutadas sobrescribiendo el conjunto
  de reglas CSS que deseamos alterar.
 \end_layout
 
@@ -676,7 +676,7 @@ s convenciones:
 \end_layout
 
 \begin_layout Itemize
-Cada caso de uso está precedido por una letra: C, R, U o D, que signican
+Cada caso de uso está precedido por una letra: C, R, U o D, que significan
 \emph on
  create
 \emph default
@@ -4140,7 +4140,7 @@ views
 
 \begin_layout Standard
 Podemos distinguir entre componentes que son comunes a la estructura de
- la página web y que se han modularizado de cara a no repetir codigo como
+ la página web y que se han modularizado de cara a no repetir código como
  son las 
 \begin_inset Quotes fld
 \end_inset
@@ -4161,7 +4161,7 @@ breadcrumbs
 
 \begin_layout Standard
 De esta forma he intentado crear un sistema de plantillas que he ido usando
- para contruir las vistas.
+ para construir las vistas.
  Para mayor profundidad, mejor consultar el código fuente.
 \end_layout
 
@@ -4241,7 +4241,7 @@ Contraseña
 \end_layout
 
 \begin_layout Standard
-En caso de que algún campo no sea introducido, el sitio automaticamente
+En caso de que algún campo no sea introducido, el sitio automáticamente
  solicitará su obligado ingreso:
 \end_layout
 
@@ -4658,7 +4658,7 @@ Modificar
 \end_inset
 
  será redirigido a un formulario con sus valores actuales.
- Modifíquelos y pulse el botón 
+ Realice las modificaciones pertinentes y pulse el botón 
 \begin_inset Quotes fld
 \end_inset
 
@@ -4915,7 +4915,7 @@ Contraseña
 \end_layout
 
 \begin_layout Standard
-En caso de que algún campo no sea introducido, el sitio automaticamente
+En caso de que algún campo no sea introducido, el sitio automáticamente
  solicitará su obligado ingreso:
 \end_layout
 
@@ -5542,7 +5542,7 @@ Modificar
 \end_inset
 
  será redirigido a un formulario con los valores actuales de la entrega.
- Modifíquelos y pulse el botón 
+ Realice las modificaciones pertinentes y pulse el botón 
 \begin_inset Quotes fld
 \end_inset
 
@@ -5886,7 +5886,7 @@ Modificar
 \end_inset
 
  será redirigido a un formulario con los valores actuales del usuario.
- Modifíquelos y pulse el botón 
+ Realice las modificaciones pertinentes y pulse el botón 
 \begin_inset Quotes fld
 \end_inset
 
@@ -6109,7 +6109,7 @@ Nueva plantación
 \end_layout
 
 \begin_layout Standard
-El año se rellena como un valor númerico.
+El año se rellena como un valor numérico.
  Tanto la zona como el identificar de usuario son desplegables.
  La zona puede tener los siguientes valores:
 \end_layout
@@ -6223,7 +6223,7 @@ Borrar
 \end_layout
 
 \begin_layout Subsubsection
-Modificar los datos de una plantacion
+Modificar los datos de una plantación
 \end_layout
 
 \begin_layout Standard
@@ -6252,7 +6252,7 @@ Modificar
 \end_inset
 
  será redirigido a un formulario con los valores actuales de la plantación.
- Modifíquelos y pulse el botón 
+ Realice las modificaciones pertinentes y pulse el botón 
 \begin_inset Quotes fld
 \end_inset
 
@@ -6556,7 +6556,7 @@ Texto alternativo imágenes
 \end_layout
 
 \begin_layout Standard
-Fijado para la única imágen de la web, el logotipo:
+Fijado para la única imagen de la web, el logotipo:
 \end_layout
 
 \begin_layout Standard
@@ -7901,8 +7901,8 @@ public_html
 \begin_inset Quotes frd
 \end_inset
 
- subiremos todos los ficheros estrictamentemente necesarios para el funcionamien
-to de la aplicación:
+ subiremos todos los ficheros estrictamente necesarios para el funcionamiento
+ de la aplicación:
 \end_layout
 
 \begin_layout Standard
@@ -7943,7 +7943,7 @@ Creando la base de datos
 \end_layout
 
 \begin_layout Standard
-Desde el panel de configuación del sitio hacemos click en 
+Desde el panel de configuración del sitio hacemos click en 
 \begin_inset Quotes fld
 \end_inset
 
@@ -8914,7 +8914,7 @@ Enviar un fichero pdf adjunto al correo electrónico con los datos de la
 \end_layout
 
 \begin_layout Itemize
-Uso de funciones de realimentación al usuario.
+Uso de funciones de realimentación al usuario..
 \end_layout
 
 \begin_layout Itemize
